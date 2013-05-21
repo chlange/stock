@@ -1,0 +1,11 @@
+de.stock.action
+de.stock.deserializer
+de.stock.environment
+de.stock.environment.types
+de.stock.event
+de.stock.event.types
+de.stock.game
+de.stock.level
+de.stock.settings
+de.stock.tradeable
+de.stock.utils
