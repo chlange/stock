@@ -446,6 +446,14 @@ public class ActionObserver {
         // TODO: If player owns one or more stocks of a tradeable that will be deleted ask him if he wants to sell or keep them!
         if (level.getLevelPack() != null && level.getLevelPack().getTradeables() != null) {
             for (final ITradeable tradeable : level.getLevelPack().getTradeables()) {
+                /**
+                 * Pseudo - Not tested:
+                 * 
+                 * if(Player.getTradeables().containsKey(tradeable)) {
+                 *     Ask player to sell or keep tradeables
+                 * }
+                 * 
+                 */
                 TradeableHandler.getInstance().getActiveTradeables().remove(tradeable);
             }
         }
@@ -468,6 +476,14 @@ public class ActionObserver {
         // TODO: If player owns one or more stocks of a tradeable that will be deleted ask him if he wants to sell or keep them!
         if (level.getTradeables() != null) {
             for (final ITradeable tradeable : level.getTradeables()) {
+                /**
+                 * Pseudo - Not tested:
+                 * 
+                 * if(Player.getTradeables().containsKey(tradeable)) {
+                 *     Ask player to sell or keep tradeables
+                 * }
+                 * 
+                 */
                 TradeableHandler.getInstance().getActiveTradeables().remove(tradeable);
             }
         }
