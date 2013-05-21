@@ -3,7 +3,6 @@ stock
 
 A game facing the tough and obscure world of stock exchange. Levels, Events, Environments, Tradeables, you will love it! More information will be published soon, keep your eyes peeled.
 
-
 What's done?
 ============
 	- Logic of the game is 95% finished.
@@ -26,5 +25,8 @@ What's missing?
 		I tried to implement a wrapper class for informaton output so further developers can 
 		build fantastic GUI's without significant code changes.
 		But I never created a GUI. This wrapper class could be a blessing or curse.
-						
+
+Contact
+=======
+
 Contact me if you are interested or contact someone you know that might be interested! :)
