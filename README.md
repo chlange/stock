@@ -15,8 +15,8 @@ What's done?
 What's missing?
 ===============
 
-	- One (really!) small issue must be fixed.
-	- An easy-to-use bet system for derivates must be implemented, which could cost some brain cells!
+	- One (really!) small issue (Issue #1) must be fixed.
+	- An easy-to-use bet system for derivates must be implemented, which could cost some brain cells! (Issue #2)
 		A developer should be able to create bet options on stocks (and maybe more...) easily 
 		(i.e. the percental increase of a stock until tomorrow, the stock value after three days, ...).
 	- A plugin system would be nice, but I wasn't completely happy with my solutions.
