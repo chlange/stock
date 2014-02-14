@@ -23,7 +23,7 @@ import de.stock.utils.Priority;
  * event only.<br>
  * <br>
  * (These events can influence {@link de.stock.environment.IEnvironment
- * environments}, {@link de.stock.tradeable.ITradeable tradeables} (through
+ * environments}, {@link de.stock.tradable.ITradable tradeables} (through
  * {@link de.stock.environment.EnvironmentGroup environment groups}) and
  * {@link de.stock.settings.Settings_Influencable other objects})<br>
  * <br>

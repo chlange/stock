@@ -8,8 +8,8 @@ import de.stock.action.ActionObserver;
 import de.stock.event.types.MainEvent;
 import de.stock.settings.Settings_Level;
 import de.stock.settings.Settings_Output;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.InputReader;
 import de.stock.utils.Printer;
 
@@ -289,10 +289,10 @@ public class LevelPackHandler {
             }
         }
 
-        if (levelPack.getTradeables() != null) {
+        if (levelPack.getTradables() != null) {
             // Register level pack specific tradeables to active tradeables
-            for (final ITradeable tradeable : levelPack.getTradeables()) {
-                TradeableHandler.getInstance().registerActiveTradeable(tradeable);
+            for (final ITradable tradable : levelPack.getTradables()) {
+                TradableHandler.getInstance().registerActiveTradable(tradable);
             }
         }
     }

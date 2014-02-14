@@ -20,10 +20,10 @@ import de.stock.environment.types.Group;
 import de.stock.environment.types.Location;
 import de.stock.event.types.MainEvent;
 import de.stock.settings.Settings_Deserializer;
-import de.stock.tradeable.Commodity;
-import de.stock.tradeable.Forex;
-import de.stock.tradeable.Stock;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.Commodity;
+import de.stock.tradable.Forex;
+import de.stock.tradable.Stock;
+import de.stock.tradable.TradableHandler;
 
 public class EnvironmentHandlerTest {
 
@@ -68,51 +68,51 @@ public class EnvironmentHandlerTest {
         environmentGroup.setInfluenceTopLimit(1.0);
         environmentGroup.registerEnvironment(location);
         assertTrue(environmentGroup.getEnvironments().size() == 1);
-        location.registerTradeable(stock);
-        assertTrue(location.getInfluencedTradeables().size() == 1);
+        location.registerTradable(stock);
+        assertTrue(location.getInfluencedTradables().size() == 1);
         stock.setValue(100.0);
         mainEvent.registerEnvironmentGroup(environmentGroup);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 100.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 100.0);
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(101.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
         assertEquals(new Double(101.0), stock.getValue());
 
         // Reset
         stock.setValue(100.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 100.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 100.0);
 
         // Affect stock and bond through location
-        location.registerTradeable(bond);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 1.0);
+        location.registerTradable(bond);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 1.0);
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(101.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
         assertEquals(new Double(1.01),
-                TradeableHandler.getInstance().getActiveTradeables().get(bond));
+                TradableHandler.getInstance().getActiveTradables().get(bond));
         assertEquals(new Double(101.0), stock.getValue());
         assertEquals(new Double(1.01), bond.getValue());
 
         // Reset
         stock.setValue(100.0);
         bond.setValue(1.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 100.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 1.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 100.0);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 1.0);
 
         // Affect stock, bond and forex through location and area
         environmentGroup.registerEnvironment(area);
-        area.registerTradeable(forex);
-        area.registerTradeable(stock);
-        area.registerTradeable(bond);
-        location.registerTradeable(forex);
-        TradeableHandler.getInstance().getActiveTradeables().put(forex, 200.0);
+        area.registerTradable(forex);
+        area.registerTradable(stock);
+        area.registerTradable(bond);
+        location.registerTradable(forex);
+        TradableHandler.getInstance().getActiveTradables().put(forex, 200.0);
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(101.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
         assertEquals(new Double(1.01),
-                TradeableHandler.getInstance().getActiveTradeables().get(bond));
+                TradableHandler.getInstance().getActiveTradables().get(bond));
         assertEquals(new Double(202.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(forex));
+                TradableHandler.getInstance().getActiveTradables().get(forex));
         assertEquals(new Double(101.0), stock.getValue());
         assertEquals(new Double(1.01), bond.getValue());
         assertEquals(new Double(202.0), forex.getValue());
@@ -121,19 +121,19 @@ public class EnvironmentHandlerTest {
         stock.setValue(100.0);
         bond.setValue(1.0);
         forex.setValue(200.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 100.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 1.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(forex, 200.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 100.0);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 1.0);
+        TradableHandler.getInstance().getActiveTradables().put(forex, 200.0);
 
-        // Affect no tradeable as these are not intersecting tradeables
+        // Affect no tradable as these are not intersecting tradeables
         environmentGroup.registerEnvironment(group);
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(100.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
-        assertEquals(new Double(1.0), TradeableHandler.getInstance().getActiveTradeables()
+                TradableHandler.getInstance().getActiveTradables().get(stock));
+        assertEquals(new Double(1.0), TradableHandler.getInstance().getActiveTradables()
                 .get(bond));
         assertEquals(new Double(200.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(forex));
+                TradableHandler.getInstance().getActiveTradables().get(forex));
         assertEquals(new Double(100.0), stock.getValue());
         assertEquals(new Double(1.0), bond.getValue());
         assertEquals(new Double(200.0), forex.getValue());
@@ -142,26 +142,26 @@ public class EnvironmentHandlerTest {
         stock.setValue(100.0);
         bond.setValue(1.0);
         forex.setValue(200.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 100.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 1.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(forex, 200.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 100.0);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 1.0);
+        TradableHandler.getInstance().getActiveTradables().put(forex, 200.0);
         environmentGroup.getEnvironments().remove(group);
 
         // Affect stock, bond and forex through location and area
         // and affect forex through areaTwo
         environmentGroupArray.add(environmentGroupTwo);
-        areaTwo.registerTradeable(forex);
+        areaTwo.registerTradable(forex);
         environmentGroupTwo.registerEnvironment(areaTwo);
         environmentGroupTwo.setInfluenceBottomLimit(1.0);
         environmentGroupTwo.setInfluenceTopLimit(1.0);
         environmentGroupTwo.setInfluenceNegative();
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(101.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
         assertEquals(new Double(1.01),
-                TradeableHandler.getInstance().getActiveTradeables().get(bond));
+                TradableHandler.getInstance().getActiveTradables().get(bond));
         assertEquals(new Double(199.98),
-                TradeableHandler.getInstance().getActiveTradeables().get(forex));
+                TradableHandler.getInstance().getActiveTradables().get(forex));
         assertEquals(new Double(101.0), stock.getValue());
         assertEquals(new Double(1.01), bond.getValue());
         assertEquals(new Double(199.98), forex.getValue());
@@ -189,7 +189,7 @@ public class EnvironmentHandlerTest {
         environment.setName("Germany");
         final Stock stock = new Stock();
         stock.setName("Drink");
-        environment.registerTradeable(stock);
+        environment.registerTradable(stock);
         final Environment environmentWrong = new Location();
 
         // Serialize environment and save in environment file (and wrong
@@ -220,8 +220,8 @@ public class EnvironmentHandlerTest {
         assertEquals("Germany", EnvironmentHandler.getInstance().getEnvironments().iterator()
                 .next().getName());
         assertEquals(1, EnvironmentHandler.getInstance().getEnvironments().iterator().next()
-                .getTradeables().size());
+                .getTradables().size());
         assertEquals("Drink", EnvironmentHandler.getInstance().getEnvironments().iterator().next()
-                .getTradeables().iterator().next().getName());
+                .getTradables().iterator().next().getName());
     }
 }

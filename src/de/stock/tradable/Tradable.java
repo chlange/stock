@@ -1,4 +1,4 @@
-package de.stock.tradeable;
+package de.stock.tradable;
 
 import java.util.HashSet;
 
@@ -7,11 +7,11 @@ import de.stock.settings.Settings_Tradeable;
 import de.stock.utils.Utils;
 
 /**
- * See {@link de.stock.tradeable.ITradeable ITradeable} for further information
+ * See {@link de.stock.tradable.ITradable ITradable} for further information
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
  */
-public class Tradeable implements ITradeable {
+public class Tradable implements ITradable {
 
     private String                name;
     private String                description;
@@ -35,15 +35,15 @@ public class Tradeable implements ITradeable {
      */
     private Integer               minShares;
     /**
-     * Available number of shares of this tradeable
+     * Available number of shares of this tradable
      */
     private Integer               shares;
     /**
-     * Tradeable is part of the Environment
+     * Tradable is part of the Environment
      */
     private HashSet<IEnvironment> partOf;
 
-    protected Tradeable() {
+    protected Tradable() {
         name = new String("");
         description = new String("");
         value = new Double(0);
@@ -141,7 +141,7 @@ public class Tradeable implements ITradeable {
     }
 
     /**
-     * Initializes value of tradeable using {@link #getInitBottomBound()} and
+     * Initializes value of tradable using {@link #getInitBottomBound()} and
      * {@link #getInitTopBound()}
      * 
      * @return Returns the initial value
@@ -158,7 +158,7 @@ public class Tradeable implements ITradeable {
      * See {@link #registerAtEnvironment(IEnvironment)}
      * 
      * @param environment
-     *            tradeable gets registered at this environment
+     *            tradable gets registered at this environment
      */
     public void linkToEnvironment(final IEnvironment environment) {
         registerAtEnvironment(environment);
@@ -166,15 +166,15 @@ public class Tradeable implements ITradeable {
 
     @Override
     /**
-     * Register tradeable at {@link de.stock.environment.Environment
+     * Register tradable at {@link de.stock.environment.Environment
      * environment}
      * 
      * @param environment
-     *            tradeable gets registered at this environment
+     *            tradable gets registered at this environment
      */
     public void registerAtEnvironment(final IEnvironment environment) {
         // Register at environment
-        environment.getTradeables().add(this);
+        environment.getTradables().add(this);
         // Save environment in object
         getPartOf().add(environment);
     }
@@ -241,13 +241,13 @@ public class Tradeable implements ITradeable {
     }
 
     /**
-     * Updates value (double, not percent) of tradeable according to random<br>
+     * Updates value (double, not percent) of tradable according to random<br>
      * value in between {@link #getInfluenceBottomBound()} and
      * {@link #setInfluenceTopBound(Double)}<br>
      * The sign of the value is random, too.
      * {@link de.stock.settings.Settings_Tradeable#SIGN_NEGATIVE_BOUND}
      * 
-     * @return new value of tradeable
+     * @return new value of tradable
      */
     @Override
     public Double updateValue() {

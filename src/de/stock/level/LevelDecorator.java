@@ -6,7 +6,7 @@ import de.stock.action.Action;
 import de.stock.action.IAction;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * See {@link de.stock.level.ILevel ILevel} for futher information
@@ -35,8 +35,8 @@ public abstract class LevelDecorator extends Action implements ILevel, IAction {
     }
 
     @Override
-    public void addTradeable(final ITradeable tradeable) {
-        level.addTradeable(tradeable);
+    public void addTradable(final ITradable tradable) {
+        level.addTradable(tradable);
     }
 
     /**
@@ -61,8 +61,8 @@ public abstract class LevelDecorator extends Action implements ILevel, IAction {
     }
 
     @Override
-    public ArrayList<ITradeable> getTradeables() {
-        return level.getTradeables();
+    public ArrayList<ITradable> getTradables() {
+        return level.getTradables();
     }
 
     /**
@@ -79,8 +79,8 @@ public abstract class LevelDecorator extends Action implements ILevel, IAction {
     }
 
     @Override
-    public void registerTradeable(final ITradeable tradeable) {
-        level.registerTradeable(tradeable);
+    public void registerTradable(final ITradable tradable) {
+        level.registerTradable(tradable);
     }
 
     @Override
@@ -99,7 +99,7 @@ public abstract class LevelDecorator extends Action implements ILevel, IAction {
     }
 
     @Override
-    public void setTradeables(final ArrayList<ITradeable> tradeables) {
-        level.setTradeables(tradeables);
+    public void setTradables(final ArrayList<ITradable> tradables) {
+        level.setTradables(tradables);
     }
 }

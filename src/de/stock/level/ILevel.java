@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import de.stock.action.IAction;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * A level, which is part of a {@link de.stock.level.LevelPack LevelPack},
@@ -34,7 +34,7 @@ import de.stock.tradeable.ITradeable;
  * <br>
  * - The <b>tradeables</b><br>
  * &nbsp;&nbsp;A level may have specific tradeables, which are removed from
- * tradeable handler if a level is passed and added if it gets started<br>
+ * tradable handler if a level is passed and added if it gets started<br>
  * <br>
  * - The <b>goal</b><br>
  * &nbsp;&nbsp;The goal to reach to get in the next level<br>
@@ -62,12 +62,12 @@ public interface ILevel extends IAction {
     public abstract void addEvent(Event event);
 
     /**
-     * Wrapper for {@link #registerTradeable(ITradeable)}
+     * Wrapper for {@link #registerTradable(ITradable)}
      * 
-     * @param tradeable
-     *            the tradeable to add
+     * @param tradable
+     *            the tradable to add
      */
-    public abstract void addTradeable(ITradeable tradeable);
+    public abstract void addTradable(ITradable tradable);
 
     /**
      * Confer award on player
@@ -80,7 +80,7 @@ public interface ILevel extends IAction {
 
     public abstract Integer getLevelStage();
 
-    public abstract ArrayList<ITradeable> getTradeables();
+    public abstract ArrayList<ITradable> getTradables();
 
     /**
      * Returns true if level goal is reached
@@ -91,7 +91,7 @@ public interface ILevel extends IAction {
 
     public abstract void registerEvent(Event event);
 
-    public abstract void registerTradeable(ITradeable tradeable);
+    public abstract void registerTradable(ITradable tradable);
 
     public abstract void setEvents(final ArrayList<MainEvent> events);
 
@@ -99,5 +99,5 @@ public interface ILevel extends IAction {
 
     public abstract void setLevelStage(final Integer levelStage);
 
-    public abstract void setTradeables(final ArrayList<ITradeable> tradeables);
+    public abstract void setTradables(final ArrayList<ITradable> tradables);
 }

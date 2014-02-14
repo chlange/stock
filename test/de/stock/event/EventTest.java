@@ -12,8 +12,8 @@ import org.junit.Test;
 import de.stock.action.ActionObserver;
 import de.stock.action.IAction;
 import de.stock.environment.types.Location;
-import de.stock.tradeable.Stock;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.Stock;
+import de.stock.tradable.TradableHandler;
 
 public class EventTest {
 
@@ -56,16 +56,16 @@ public class EventTest {
         stock.setValue(1.0);
         stock.setInitBottomBound(1.0);
         stock.setInitTopBound(1.0);
-        location.registerTradeable(stock);
+        location.registerTradable(stock);
 
         event = new Event();
         event.registerEnvironment(location, true, 1.0, 1.0);
-        TradeableHandler.getInstance().register(stock);
+        TradableHandler.getInstance().register(stock);
         ActionObserver.getInstance().getActiveEvents().put(event, 1);
         assertEquals(new Double(1.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
         ActionObserver.getInstance().iterateActiveEvents();
         assertEquals(new Double(1.01),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
     }
 }

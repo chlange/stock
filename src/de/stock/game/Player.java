@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import de.stock.settings.Settings_Game;
 import de.stock.settings.Settings_Input;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 import de.stock.utils.InputReader;
 import de.stock.utils.Printer;
 
@@ -31,7 +31,7 @@ public class Player {
      */
     private double                    money;
     /**
-     * Overall number of bought tradeables
+     * Overall number of bought tradables
      */
     private long                      boughtTradeables;
     /**
@@ -44,33 +44,34 @@ public class Player {
     private String                    nationality;
 
     /**
-     * All player owned tradeables with the amount
+     * All player owned tradables with the amount
      */
-    private HashMap<ITradeable, Long> tradeables;
+    private HashMap<ITradable, Long> tradables;
 
     private Player() {
         money = 0;
         boughtTradeables = 0;
-        tradeables = new HashMap<ITradeable, Long>();
+        tradables = new HashMap<ITradable, Long>();
     }
 
     /**
-     * Adds {@code tradeable} to portfolio<br>
+     * Adds {@code tradable} to portfolio<br>
      * <br>
-     * Adds {@code amount} to tradeable if its already in the portfolio
+     * Adds {@code amount} to tradable if its already in the portfolio
      * 
-     * @param tradeable
-     *            bought tradeable
+     * @param tradable
+     *            bought tradable
      * @param amount
-     *            amount of bought tradeables
+     *            amount of bought tradables
      */
-    public void addTradeable(final ITradeable tradeable, Long amount) {
+    public void addTradable(final ITradable tradable, Long amount) {
 
-        if (getTradeables().containsKey(tradeable)) {
-            final Long currentAmount = getTradeables().get(tradeable);
-            amount += currentAmount;
-        }
-        getTradeables().put(tradeable, amount);
+        final Long currentAmount = getTradables().get(tradable);
+        
+        if(currentAmount != null)
+        	amount += currentAmount;
+        
+        getTradables().put(tradable, amount);
 
     }
 
@@ -129,8 +130,8 @@ public class Player {
         return surname;
     }
 
-    public HashMap<ITradeable, Long> getTradeables() {
-        return tradeables;
+    public HashMap<ITradable, Long> getTradables() {
+        return tradables;
     }
 
     public void incBoughtTradeables(final long value) {
@@ -169,12 +170,12 @@ public class Player {
         this.surname = surname;
     }
 
-    public void setTradeableMap(final HashMap<ITradeable, Long> tradeableMap) {
+    public void setTradableMap(final HashMap<ITradable, Long> tradableMap) {
 
-        tradeables = tradeableMap;
+        tradables = tradableMap;
     }
 
-    public void setTradeables(final HashMap<ITradeable, Long> tradeables) {
-        this.tradeables = tradeables;
+    public void setTradables(final HashMap<ITradable, Long> tradables) {
+        this.tradables = tradables;
     }
 }

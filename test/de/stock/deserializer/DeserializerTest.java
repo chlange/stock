@@ -27,9 +27,9 @@ import de.stock.event.types.MainEvent;
 import de.stock.game.Player;
 import de.stock.level.LevelDecorator;
 import de.stock.settings.Settings_Deserializer;
-import de.stock.tradeable.Commodity;
-import de.stock.tradeable.Stock;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.Commodity;
+import de.stock.tradable.Stock;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.Priority;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
@@ -50,7 +50,7 @@ public class DeserializerTest {
     public void setUp() throws Exception {
         event = folder.newFile("Event.evt");
         environment = folder.newFile("Environment.env");
-        tradeable = folder.newFile("Tradeable.trd");
+        tradeable = folder.newFile("Tradable.trd");
         nevermindFile = folder.newFile("NVM");
         nevermindFolder = folder.newFolder("nevermindFolder");
         fileInNevermindFolder = folder.newFile("nevermindFolder/file.test");
@@ -72,7 +72,7 @@ public class DeserializerTest {
         location.setName("Success");
         eg.registerEnvironment(location);
         final Commodity oil = new Commodity();
-        location.registerTradeable(oil);
+        location.registerTradable(oil);
         oil.setValue(1.0);
         event.registerEnvironmentGroup(eg);
 
@@ -87,7 +87,7 @@ public class DeserializerTest {
         assertEquals("Success", deserialized.getEnvironmentGroups().get(0).getEnvironments().get(0)
                 .getName());
         assertFalse(deserialized.getEnvironmentGroups().get(0).getEnvironments().get(0)
-                .getTradeables().isEmpty());
+                .getTradables().isEmpty());
 
         // Test parser deserializer
         deserialized = (Event) Deserializer.deserialize(Settings_Deserializer.TYPE_EVENT,
@@ -97,7 +97,7 @@ public class DeserializerTest {
         assertEquals("Success", deserialized.getEnvironmentGroups().get(0).getEnvironments().get(0)
                 .getName());
         assertFalse(deserialized.getEnvironmentGroups().get(0).getEnvironments().get(0)
-                .getTradeables().isEmpty());
+                .getTradables().isEmpty());
 
     }
 
@@ -106,7 +106,7 @@ public class DeserializerTest {
         final File files[] = Deserializer.getFilesFromDir(folder.getRoot());
         assertEquals("Environment.env", files[0].getName());
         assertEquals("Event.evt", files[1].getName());
-        assertEquals("Tradeable.trd", files[4].getName());
+        assertEquals("Tradable.trd", files[4].getName());
         assertTrue(files[2].getPath().endsWith("nevermindFolder"));
     }
 
@@ -148,7 +148,7 @@ public class DeserializerTest {
         stock.setInitTopBound(0.0);
         stock.setInitBottomBound(0.0);
         final Location loc = new Location();
-        loc.registerTradeable(stock);
+        loc.registerTradable(stock);
         final EnvironmentGroup eg = new EnvironmentGroup();
         eg.setInfluencePositive();
         eg.setInfluenceLimit(500.0, 500.0);
@@ -156,14 +156,14 @@ public class DeserializerTest {
         final MainEvent me = new MainEvent();
         me.setName("event");
         me.registerEnvironmentGroup(eg);
-        level.registerTradeable(stock);
+        level.registerTradable(stock);
         level.registerEvent(me);
         ActionObserver.getInstance().getActiveEvents().put(me, 1);
         assertEquals(0, ActionObserver.getInstance().getActiveLevels().size());
         ActionObserver.getInstance().registerLevel(level);
         assertEquals(1, ActionObserver.getInstance().getActiveLevels().size());
         assertEquals(new Double(0.0), ActionObserver.getInstance().getActiveLevels().get(0)
-                .getTradeables().get(0).getValue());
+                .getTradables().get(0).getValue());
         Player.getInstance().setMoney(0);
         ActionObserver.getInstance().iterateActiveLevels();
         assertEquals(1, ActionObserver.getInstance().getActiveLevels().size());
@@ -171,7 +171,7 @@ public class DeserializerTest {
         ActionObserver.getInstance().iterateActiveLevels();
         assertEquals(0, ActionObserver.getInstance().getActiveLevels().size());
         assertEquals(1, ActionObserver.getInstance().getActiveEvents().size());
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 1.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 1.0);
         ActionObserver.getInstance().iterateActiveEvents();
         assertEquals(0, ActionObserver.getInstance().getActiveEvents().size());
         assertEquals(new Double(6.0), stock.getValue());
@@ -199,7 +199,7 @@ public class DeserializerTest {
         environment.setName("Germany");
         final Stock stock = new Stock();
         stock.setName("Drink");
-        environment.registerTradeable(stock);
+        environment.registerTradable(stock);
         final Environment environmentWrong = new Location();
 
         // Serialize environment and save in environment file (and wrong
@@ -230,9 +230,9 @@ public class DeserializerTest {
         assertEquals("Germany", EnvironmentHandler.getInstance().getEnvironments().iterator()
                 .next().getName());
         assertEquals(1, EnvironmentHandler.getInstance().getEnvironments().iterator().next()
-                .getTradeables().size());
+                .getTradables().size());
         assertEquals("Drink", EnvironmentHandler.getInstance().getEnvironments().iterator().next()
-                .getTradeables().iterator().next().getName());
+                .getTradables().iterator().next().getName());
     }
 
     @Test

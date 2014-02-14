@@ -29,10 +29,10 @@ import de.stock.level.LevelPack;
 import de.stock.settings.Settings_Deserializer;
 import de.stock.settings.Settings_Event;
 import de.stock.settings.Settings_Influencable;
-import de.stock.tradeable.Commodity;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.Stock;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.Commodity;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.Stock;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.Priority;
 import de.stock.utils.Provider;
 
@@ -276,7 +276,7 @@ public class ActionObserverTest {
         assertEquals(0, ao.getActiveLevels().size());
         assertEquals(0, ao.getMainEvents().size());
 
-        // Test level specific tradeable removal if level is passed
+        // Test level specific tradable removal if level is passed
         level = new LevelDecorator() {
 
             @Override
@@ -289,21 +289,21 @@ public class ActionObserverTest {
             }
         };
         Stock stock = new Stock();
-        level.setTradeables(new ArrayList<ITradeable>());
-        level.getTradeables().add(stock);
-        TradeableHandler.getInstance().setActiveTradeables(new HashMap<ITradeable, Double>());
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 0.0);
+        level.setTradables(new ArrayList<ITradable>());
+        level.getTradables().add(stock);
+        TradableHandler.getInstance().setActiveTradables(new HashMap<ITradable, Double>());
+        TradableHandler.getInstance().getActiveTradables().put(stock, 0.0);
         ao.setActiveLevels(new ArrayList<ILevel>());
         ao.registerLevel(level);
         Provider.getPlayer().setMoney(1500);
         assertTrue(level.hasPassedLevel());
         assertEquals(1, ao.getActiveLevels().size());
-        assertEquals(1, TradeableHandler.getInstance().getActiveTradeables().size());
+        assertEquals(1, TradableHandler.getInstance().getActiveTradables().size());
         ao.iterateActiveLevels();
         assertEquals(0, ao.getActiveLevels().size());
-        assertEquals(0, TradeableHandler.getInstance().getActiveTradeables().size());
+        assertEquals(0, TradableHandler.getInstance().getActiveTradables().size());
 
-        // Test level pack specific tradeable removal if level is passed
+        // Test level pack specific tradable removal if level is passed
         levelPack = new LevelPack("my", "levelPack") {
 
             @Override
@@ -323,23 +323,23 @@ public class ActionObserverTest {
         };
         stock = new Stock();
         final Commodity bond = new Commodity();
-        levelPack.setTradeables(new ArrayList<ITradeable>());
-        levelPack.getTradeables().add(bond);
+        levelPack.setTradables(new ArrayList<ITradable>());
+        levelPack.getTradables().add(bond);
         level.setLevelPack(levelPack);
-        level.setTradeables(new ArrayList<ITradeable>());
-        level.getTradeables().add(stock);
-        TradeableHandler.getInstance().setActiveTradeables(new HashMap<ITradeable, Double>());
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 0.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 0.0);
+        level.setTradables(new ArrayList<ITradable>());
+        level.getTradables().add(stock);
+        TradableHandler.getInstance().setActiveTradables(new HashMap<ITradable, Double>());
+        TradableHandler.getInstance().getActiveTradables().put(stock, 0.0);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 0.0);
         ao.setActiveLevels(new ArrayList<ILevel>());
         ao.registerLevel(level);
         Provider.getPlayer().setMoney(1500);
         assertTrue(level.hasPassedLevel());
         assertEquals(1, ao.getActiveLevels().size());
-        assertEquals(2, TradeableHandler.getInstance().getActiveTradeables().size());
+        assertEquals(2, TradableHandler.getInstance().getActiveTradables().size());
         ao.iterateActiveLevels();
         assertEquals(0, ao.getActiveLevels().size());
-        assertEquals(0, TradeableHandler.getInstance().getActiveTradeables().size());
+        assertEquals(0, TradableHandler.getInstance().getActiveTradables().size());
     }
 
     @Test
@@ -429,7 +429,7 @@ public class ActionObserverTest {
             fail("Unable to create files " + e);
         }
 
-        // Create event with linked environment and tradeable
+        // Create event with linked environment and tradable
         final Event event = new MainEvent();
         event.setName("Event");
         final EnvironmentGroup eg = new EnvironmentGroup();
@@ -438,7 +438,7 @@ public class ActionObserverTest {
         location.setName("Germany");
         final Stock stock = new Stock();
         stock.setName("Drink");
-        location.registerTradeable(stock);
+        location.registerTradable(stock);
         eg.registerEnvironment(location);
         event.registerEnvironmentGroup(eg);
 

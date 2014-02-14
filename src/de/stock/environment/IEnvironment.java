@@ -2,7 +2,7 @@ package de.stock.environment;
 
 import java.util.HashSet;
 
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * Interface for environments<br>
@@ -38,13 +38,13 @@ public interface IEnvironment {
      * 
      * @return Returns all affected tradeables of current environment
      */
-    public HashSet<ITradeable> getInfluencedTradeables();
+    public HashSet<ITradable> getInfluencedTradables();
 
     public HashSet<IEnvironment> getLinkedEnvironments();
 
     public String getName();
 
-    public HashSet<ITradeable> getTradeables();
+    public HashSet<ITradable> getTradables();
 
     /**
      * Links environment with percentage Influence<br>
@@ -62,12 +62,12 @@ public interface IEnvironment {
     public boolean linkEnvironment(IEnvironment environment);
 
     /**
-     * Register tradeable which is part of the environment
+     * Register tradable which is part of the environment
      * 
-     * @param tradeable
-     *            Tradeable that gets linked
+     * @param tradable
+     *            Tradable that gets linked
      */
-    public void registerTradeable(ITradeable tradeable);
+    public void registerTradable(ITradable tradable);
 
     public void setDescription(String description);
 

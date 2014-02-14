@@ -24,7 +24,7 @@ public final class Settings_Deserializer {
      */
     public static final Integer TYPE_LEVELPACK         = 0x0004;
     /**
-     * Serialized tradeable file extension
+     * Serialized tradable file extension
      */
     public static final String  EXTENSION_TRADEABLES   = ".trd";
     /**
@@ -40,7 +40,7 @@ public final class Settings_Deserializer {
      */
     public static final String  EXTENSION_LEVELPACKS   = ".lvl";
     /**
-     * Serialized tradeable path
+     * Serialized tradable path
      */
     public static String        PATH_TRADEABLES        = Settings_Game.PATH_RESOURCES
                                                                + "tradeables/";

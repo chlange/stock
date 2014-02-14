@@ -99,7 +99,7 @@ import net.xeoh.plugins.base.util.PluginManagerUtil;
  *   lemonPlantations.setName("Lemon plantations");
  *   lemonPlantations.setDescription("All lemon plantations");
  * 
- *   // Level specific tradeable
+ *   // Level specific tradable
  *   Commodity lemons = new Commodity();
  *   lemons.setName("Lemons");
  *   lemons.setDescription("The lemon is a small ellipsoidal yellow fruit");
@@ -185,7 +185,7 @@ import net.xeoh.plugins.base.util.PluginManagerUtil;
  *   myEvent.registerEnvironmentGroup(greeceLemonPlantations);
  *   // Add event to level
  *   myLevel.registerEvent(myEvent);
- *   // Add tradeable to level
+ *   // Add tradable to level
  *   myLevel.registerTradeable(lemons);
  *   // Add level to level pack
  *   addFirstLevel(myLevel);

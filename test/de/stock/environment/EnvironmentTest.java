@@ -12,9 +12,9 @@ import org.junit.Test;
 import de.stock.environment.types.Area;
 import de.stock.environment.types.Group;
 import de.stock.environment.types.Location;
-import de.stock.tradeable.Commodity;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.Stock;
+import de.stock.tradable.Commodity;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.Stock;
 
 public class EnvironmentTest {
 
@@ -65,29 +65,29 @@ public class EnvironmentTest {
     @Test
     public void testGetAffectedTradeables() {
 
-        HashSet<ITradeable> affectedTradeables;
+        HashSet<ITradable> affectedTradables;
 
-        // Check with one linked environment and one tradeable
-        linkedLocation.registerTradeable(bond);
+        // Check with one linked environment and one tradable
+        linkedLocation.registerTradable(bond);
         assertTrue(location.linkEnvironment(linkedLocation));
         assertTrue(location.getLinkedEnvironments().size() == 1);
-        affectedTradeables = location.getInfluencedTradeables();
-        assertTrue(affectedTradeables.size() == 1);
-        assertTrue(affectedTradeables.contains(bond));
+        affectedTradables = location.getInfluencedTradables();
+        assertTrue(affectedTradables.size() == 1);
+        assertTrue(affectedTradables.contains(bond));
 
         // Reset
         linkedLocation = new Location();
 
         // Check with two linear linked environments and two tradeables
-        linkedArea.registerTradeable(bond);
-        linkedLocation.registerTradeable(stock);
+        linkedArea.registerTradable(bond);
+        linkedLocation.registerTradable(stock);
         assertTrue(area.linkEnvironment(linkedArea));
         assertTrue(area.linkEnvironment(linkedLocation));
         assertTrue(area.getLinkedEnvironments().size() == 2);
-        affectedTradeables = area.getInfluencedTradeables();
-        assertTrue(affectedTradeables.size() == 2);
-        assertTrue(affectedTradeables.contains(bond));
-        assertTrue(affectedTradeables.contains(stock));
+        affectedTradables = area.getInfluencedTradables();
+        assertTrue(affectedTradables.size() == 2);
+        assertTrue(affectedTradables.contains(bond));
+        assertTrue(affectedTradables.contains(stock));
 
         // Reset
         area = new Area();
@@ -96,14 +96,14 @@ public class EnvironmentTest {
 
         // Check with two linear linked environments and two tradeables but both
         // the same
-        linkedArea.registerTradeable(bond);
-        linkedLocation.registerTradeable(bond);
+        linkedArea.registerTradable(bond);
+        linkedLocation.registerTradable(bond);
         assertTrue(area.linkEnvironment(linkedArea));
         assertTrue(area.linkEnvironment(linkedLocation));
         assertTrue(area.getLinkedEnvironments().size() == 2);
-        affectedTradeables = area.getInfluencedTradeables();
-        assertTrue(affectedTradeables.size() == 1);
-        assertTrue(affectedTradeables.contains(bond));
+        affectedTradables = area.getInfluencedTradables();
+        assertTrue(affectedTradables.size() == 1);
+        assertTrue(affectedTradables.contains(bond));
 
         // Reset
         area = new Area();
@@ -111,16 +111,16 @@ public class EnvironmentTest {
         linkedLocation = new Location();
 
         // Check with two rooted linked environments and two tradeables
-        linkedArea.registerTradeable(bond);
-        linkedLocation.registerTradeable(stock);
+        linkedArea.registerTradable(bond);
+        linkedLocation.registerTradable(stock);
         assertTrue(area.linkEnvironment(linkedArea));
         assertTrue(linkedArea.linkEnvironment(linkedLocation));
         assertTrue(area.getLinkedEnvironments().size() == 1);
         assertTrue(linkedArea.getLinkedEnvironments().size() == 1);
-        affectedTradeables = area.getInfluencedTradeables();
-        assertTrue(affectedTradeables.size() == 2);
-        assertTrue(affectedTradeables.contains(bond));
-        assertTrue(affectedTradeables.contains(stock));
+        affectedTradables = area.getInfluencedTradables();
+        assertTrue(affectedTradables.size() == 2);
+        assertTrue(affectedTradables.contains(bond));
+        assertTrue(affectedTradables.contains(stock));
 
         // Reset
         area = new Area();
@@ -129,17 +129,17 @@ public class EnvironmentTest {
 
         // Check with two rooted linked environments and three tradeables but
         // two the same
-        linkedArea.registerTradeable(bond);
-        linkedLocation.registerTradeable(bond);
-        linkedLocation.registerTradeable(stock);
+        linkedArea.registerTradable(bond);
+        linkedLocation.registerTradable(bond);
+        linkedLocation.registerTradable(stock);
         assertTrue(area.linkEnvironment(linkedArea));
         assertTrue(linkedArea.linkEnvironment(linkedLocation));
         assertTrue(area.getLinkedEnvironments().size() == 1);
         assertTrue(linkedArea.getLinkedEnvironments().size() == 1);
-        affectedTradeables = area.getInfluencedTradeables();
-        assertTrue(affectedTradeables.size() == 2);
-        assertTrue(affectedTradeables.contains(bond));
-        assertTrue(affectedTradeables.contains(stock));
+        affectedTradables = area.getInfluencedTradables();
+        assertTrue(affectedTradables.size() == 2);
+        assertTrue(affectedTradables.contains(bond));
+        assertTrue(affectedTradables.contains(stock));
     }
 
     @Test
@@ -210,19 +210,19 @@ public class EnvironmentTest {
     @Test
     public void testRegisterTradeable() {
 
-        // Test without registered tradeable
-        assertTrue(location.getInfluencedTradeables().size() == 0);
+        // Test without registered tradable
+        assertTrue(location.getInfluencedTradables().size() == 0);
 
-        // Test with one registered tradeable
-        location.registerTradeable(bond);
-        assertTrue(location.getInfluencedTradeables().size() == 1);
+        // Test with one registered tradable
+        location.registerTradable(bond);
+        assertTrue(location.getInfluencedTradables().size() == 1);
 
-        // Test with already registered tradeable
-        location.registerTradeable(bond);
-        assertTrue(location.getInfluencedTradeables().size() == 1);
+        // Test with already registered tradable
+        location.registerTradable(bond);
+        assertTrue(location.getInfluencedTradables().size() == 1);
 
-        // Test with two registered tradeable
-        location.registerTradeable(stock);
-        assertTrue(location.getInfluencedTradeables().size() == 2);
+        // Test with two registered tradable
+        location.registerTradable(stock);
+        assertTrue(location.getInfluencedTradables().size() == 2);
     }
 }

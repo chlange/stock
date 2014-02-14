@@ -12,8 +12,8 @@ import de.stock.environment.IEnvironment;
 import de.stock.event.Event;
 import de.stock.settings.Settings_Deserializer;
 import de.stock.settings.Settings_Output;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.Printer;
 import flexjson.JSONDeserializer;
 import flexjson.JSONSerializer;
@@ -43,8 +43,8 @@ public final class Deserializer {
      * Deserializes all files regarding to {@code type}<br>
      * <br>
      * - Tradeables are saved in
-     * {@link de.stock.tradeable.TradeableHandler#getTradeables()
-     * TradeableHandler}<br>
+     * {@link de.stock.tradable.TradableHandler#getTradables()
+     * TradableHandler}<br>
      * - Events are saved in
      * {@link de.stock.action.ActionObserver#getMainEvents() ActionObserver}<br>
      * - Environments are saved in
@@ -94,16 +94,16 @@ public final class Deserializer {
      */
     public static Object deserialize(final Integer type, final String string) {
         if (type == Settings_Deserializer.TYPE_TRADEABLE) {
-            final JSONDeserializer<ITradeable> jsondeserializer = new JSONDeserializer<ITradeable>();
-            ITradeable tradeable = null;
+            final JSONDeserializer<ITradable> jsondeserializer = new JSONDeserializer<ITradable>();
+            ITradable tradable = null;
             try {
-                tradeable = jsondeserializer.deserialize(string);
-                return tradeable;
+                tradable = jsondeserializer.deserialize(string);
+                return tradable;
             }
             catch (final Exception e) {
                 Printer.print(Settings_Output.OUT_ERROR, "Deserializer error", 0,
                         "Deserializer error",
-                        "Unable to deserialize tradeable string starting with the following text:\n"
+                        "Unable to deserialize tradable string starting with the following text:\n"
                                 + string.substring(0, 100) + "[...]");
                 return null;
             }
@@ -182,8 +182,8 @@ public final class Deserializer {
                         ActionObserver.getInstance().registerEvent((Event) object);
                     } else if (object instanceof IEnvironment) {
                         EnvironmentHandler.getInstance().register((IEnvironment) object);
-                    } else if (object instanceof ITradeable) {
-                        TradeableHandler.getInstance().addTradeable((ITradeable) object);
+                    } else if (object instanceof ITradable) {
+                        TradableHandler.getInstance().addTradable((ITradable) object);
                     } else {
                         continue;
                     }

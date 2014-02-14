@@ -31,7 +31,7 @@ public final class Settings_Output {
     public static final Integer OUT_OPTION_VALUE    = 0x302;
     public static final Integer OUT_OPTION_NAME     = 0x303;
     public static final Integer OUT_OPTION_TEXT     = 0x304;
-    // Output: Tradeable
+    // Output: Tradable
     public static final Integer OUT_TRADEABLE       = 0x400;
     public static final Integer OUT_TRADEABLE_HEAD  = 0x401;
     public static final Integer OUT_TRADEABLE_VALUE = 0x402;

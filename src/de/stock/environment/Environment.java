@@ -5,7 +5,7 @@ import java.util.HashSet;
 import de.stock.environment.types.Area;
 import de.stock.environment.types.Group;
 import de.stock.environment.types.Location;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * See {@link de.stock.environment.IEnvironment IEnvironment} for further
@@ -23,15 +23,15 @@ public class Environment implements IEnvironment {
      */
     private final HashSet<IEnvironment> linkedEnvironments;
     /**
-     * Current environment influences ITradeable
+     * Current environment influences ITradable
      */
-    private final HashSet<ITradeable>   tradeables;
+    private final HashSet<ITradable>   tradables;
 
     protected Environment() {
         name = new String("");
         description = new String("");
         linkedEnvironments = new HashSet<IEnvironment>();
-        tradeables = new HashSet<ITradeable>();
+        tradables = new HashSet<ITradable>();
     }
 
     @Override
@@ -42,23 +42,23 @@ public class Environment implements IEnvironment {
 
     /**
      * Returns all directly available and linked by other enviroments influenced
-     * tradeables
+     * tradables
      * 
-     * @return Returns all influenced tradeables of current environment
+     * @return Returns all influenced tradables of current environment
      */
     @Override
-    public HashSet<ITradeable> getInfluencedTradeables() {
+    public HashSet<ITradable> getInfluencedTradables() {
 
-        final HashSet<ITradeable> affectedTradeables = new HashSet<ITradeable>();
+        final HashSet<ITradable> affectedTradables = new HashSet<ITradable>();
 
-        // Add direct available tradeables to map
-        affectedTradeables.addAll(tradeables);
-        // Add all affected tradeables of all linked environments recursively
+        // Add direct available tradables to map
+        affectedTradables.addAll(tradables);
+        // Add all affected tradables of all linked environments recursively
         for (final IEnvironment environment : linkedEnvironments) {
-            affectedTradeables.addAll(environment.getInfluencedTradeables());
+            affectedTradables.addAll(environment.getInfluencedTradables());
         }
 
-        return affectedTradeables;
+        return affectedTradables;
     }
 
     @Override
@@ -74,8 +74,8 @@ public class Environment implements IEnvironment {
     }
 
     @Override
-    public HashSet<ITradeable> getTradeables() {
-        return tradeables;
+    public HashSet<ITradable> getTradables() {
+        return tradables;
     }
 
     /**
@@ -120,14 +120,14 @@ public class Environment implements IEnvironment {
     }
 
     /**
-     * Register tradeable which is part of the environment
+     * Register tradable which is part of the environment
      * 
-     * @param tradeable
-     *            Tradeable that gets linked
+     * @param tradable
+     *            Tradable that gets linked
      */
     @Override
-    public void registerTradeable(final ITradeable tradeable) {
-        tradeable.registerAtEnvironment(this);
+    public void registerTradable(final ITradable tradable) {
+        tradable.registerAtEnvironment(this);
     }
 
     @Override

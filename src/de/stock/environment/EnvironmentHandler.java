@@ -5,8 +5,8 @@ import java.util.HashSet;
 
 import de.stock.deserializer.Deserializer;
 import de.stock.settings.Settings_Deserializer;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.Utils;
 
 /**
@@ -43,9 +43,9 @@ public class EnvironmentHandler {
     /**
      * Influences all tradeables linked to all environmentGroups<br>
      * <br>
-     * If a tradeable is found more than once in a environmentGroup it gets
+     * If a tradable is found more than once in a environmentGroup it gets
      * affected only once!<br>
-     * If a tradeable is found in _X_ different environment groups it gets
+     * If a tradable is found in _X_ different environment groups it gets
      * affected _X_ times!
      * 
      * @param environmentGroups
@@ -60,44 +60,44 @@ public class EnvironmentHandler {
         Integer i = 0;
 
         // List of all tradeables which are influenced
-        ArrayList<ITradeable> finalTradeables = new ArrayList<ITradeable>();
+        ArrayList<ITradable> finalTradables = new ArrayList<ITradable>();
         // Temporary storage for all tradeables
-        ArrayList<ArrayList<ITradeable>> tradeableArray = new ArrayList<ArrayList<ITradeable>>();
+        ArrayList<ArrayList<ITradable>> tradableArray = new ArrayList<ArrayList<ITradable>>();
 
         // Iterate over each group
         for (final EnvironmentGroup environmentGroup : environmentGroups) {
-            finalTradeables = new ArrayList<ITradeable>();
-            tradeableArray = new ArrayList<ArrayList<ITradeable>>();
+            finalTradables = new ArrayList<ITradable>();
+            tradableArray = new ArrayList<ArrayList<ITradable>>();
             i = 0;
 
             // Iterate over each environment and save affected tradeables
             for (final Environment environment : environmentGroup.getEnvironments()) {
 
                 // Get all affected tradeables from current environment
-                final HashSet<ITradeable> tempTradeables = environment.getInfluencedTradeables();
+                final HashSet<ITradable> tempTradables = environment.getInfluencedTradables();
 
-                // Create new tradeable array and add tradeables
-                tradeableArray.add(i, new ArrayList<ITradeable>());
-                tradeableArray.get(i).addAll(tempTradeables);
+                // Create new tradable array and add tradeables
+                tradableArray.add(i, new ArrayList<ITradable>());
+                tradableArray.get(i).addAll(tempTradables);
 
                 i++;
             }
 
             // Get all intersecting tradeables of all environments in
             // current environment group
-            if (tradeableArray.isEmpty() == false) {
+            if (tradableArray.isEmpty() == false) {
 
-                finalTradeables.addAll(tradeableArray.get(0));
+                finalTradables.addAll(tradableArray.get(0));
 
-                for (final ArrayList<ITradeable> tradeablelist : tradeableArray) {
-                    finalTradeables.retainAll(tradeablelist);
+                for (final ArrayList<ITradable> tradeablelist : tradableArray) {
+                    finalTradables.retainAll(tradeablelist);
                 }
             }
 
-            // Calculate and set new value of tradeable
-            for (final ITradeable tradeable : finalTradeables) {
-                if (TradeableHandler.getInstance().getActiveTradeables().containsKey(tradeable)) {
-                    updateTradeable(environmentGroup, tradeable);
+            // Calculate and set new value of tradable
+            for (final ITradable tradable : finalTradables) {
+                if (TradableHandler.getInstance().getActiveTradables().containsKey(tradable)) {
+                    updateTradable(environmentGroup, tradable);
                 }
             }
         }
@@ -132,18 +132,18 @@ public class EnvironmentHandler {
     }
 
     /**
-     * Updates {@code tradeable} value with properties of
+     * Updates {@code tradable} value with properties of
      * {@code environemntGroup}
      * 
      * @param environmentGroup
      *            method gets properties from this object
-     * @param tradeable
-     *            the tradeable to influence
+     * @param tradable
+     *            the tradable to influence
      */
-    private void updateTradeable(final EnvironmentGroup environmentGroup, final ITradeable tradeable) {
-        // Get current value of tradeable
-        final Double currentValue = TradeableHandler.getInstance().getActiveTradeables()
-                .get(tradeable);
+    private void updateTradable(final EnvironmentGroup environmentGroup, final ITradable tradable) {
+        // Get current value of tradable
+        final Double currentValue = TradableHandler.getInstance().getActiveTradables()
+                .get(tradable);
         // Get percentage
         final Double percentage = Utils.random(environmentGroup.getInfluenceBottomLimit(),
                 environmentGroup.getInfluenceTopLimit());
@@ -153,7 +153,7 @@ public class EnvironmentHandler {
         Double newValue = (currentValue / 100 * percentage) * sign;
         newValue += currentValue;
         // Update
-        TradeableHandler.getInstance().getActiveTradeables().put(tradeable, newValue);
-        tradeable.updateValue(newValue);
+        TradableHandler.getInstance().getActiveTradables().put(tradable, newValue);
+        tradable.updateValue(newValue);
     }
 }

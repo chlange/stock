@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import net.xeoh.plugins.base.Plugin;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * The level system knows two types of level packs:<br>
@@ -24,7 +24,7 @@ import de.stock.tradeable.ITradeable;
  * It may has tradeables which are available and events which can occur over the
  * whole playtime of the level pack.<br>
  * (Every level in a level pack may have specific
- * {@link de.stock.tradeable.Tradeable tradeables} or
+ * {@link de.stock.tradable.Tradable tradeables} or
  * {@link de.stock.event.Event events}, too!)<br>
  * <br>
  * The player can choose from these packs at the beginning of the game and if a
@@ -85,12 +85,12 @@ public interface ILevelPack extends Plugin {
     public abstract void addFirstLevel(final ILevel myFirstLevel);
 
     /**
-     * Add {@code tradeable} to level pack
+     * Add {@code tradable} to level pack
      * 
-     * @param tradeable
-     *            tradeable for the whole lifetime of the level pack
+     * @param tradable
+     *            tradable for the whole lifetime of the level pack
      */
-    public abstract void addTradeable(final ITradeable tradeable);
+    public abstract void addTradable(final ITradable tradable);
 
     public abstract String getDescription();
 
@@ -112,7 +112,7 @@ public interface ILevelPack extends Plugin {
      */
     public abstract ILevel getStartLevel();
 
-    public abstract ArrayList<ITradeable> getTradeables();
+    public abstract ArrayList<ITradable> getTradables();
 
     public abstract boolean hasOption();
 
@@ -148,5 +148,5 @@ public interface ILevelPack extends Plugin {
 
     public abstract void setNation(final String nation);
 
-    public abstract void setTradeables(final ArrayList<ITradeable> tradeables);
+    public abstract void setTradables(final ArrayList<ITradable> tradables);
 }

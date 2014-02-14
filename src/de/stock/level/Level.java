@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import de.stock.action.Action;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 
 /**
  * See {@link de.stock.level.ILevel ILevel} for futher information
@@ -27,7 +27,7 @@ public class Level extends Action implements ILevel {
      * Tradeables in this level besides the ones of the
      * {@link de.stock.level.LevelPack level pack}
      */
-    private ArrayList<ITradeable> tradeables;
+    private ArrayList<ITradable> tradables;
     /**
      * Events in this level besides the ones of the
      * {@link de.stock.level.LevelPack level pack}
@@ -35,7 +35,7 @@ public class Level extends Action implements ILevel {
     private ArrayList<MainEvent>  events;
 
     protected Level() {
-        tradeables = new ArrayList<ITradeable>();
+        tradables = new ArrayList<ITradable>();
         events = new ArrayList<MainEvent>();
     }
 
@@ -51,14 +51,14 @@ public class Level extends Action implements ILevel {
     }
 
     /**
-     * Wrapper for {@link #registerTradeable(ITradeable)}
+     * Wrapper for {@link #registerTradable(ITradable)}
      * 
-     * @param tradeable
-     *            the tradeable to add
+     * @param tradable
+     *            the tradable to add
      */
     @Override
-    public void addTradeable(final ITradeable tradeable) {
-        registerTradeable(tradeable);
+    public void addTradable(final ITradable tradable) {
+        registerTradable(tradable);
     }
 
     /**
@@ -85,8 +85,8 @@ public class Level extends Action implements ILevel {
     }
 
     @Override
-    public ArrayList<ITradeable> getTradeables() {
-        return tradeables;
+    public ArrayList<ITradable> getTradables() {
+        return tradables;
     }
 
     /**
@@ -101,17 +101,17 @@ public class Level extends Action implements ILevel {
 
     @Override
     public void registerEvent(final Event event) {
-        // Register tradeable if its not registered already
+        // Register tradable if its not registered already
         if (getEvents().contains(event) == false) {
             getEvents().add((MainEvent) event);
         }
     }
 
     @Override
-    public void registerTradeable(final ITradeable tradeable) {
-        // Register tradeable if its not registered already
-        if (getTradeables().contains(tradeable) == false) {
-            getTradeables().add(tradeable);
+    public void registerTradable(final ITradable tradable) {
+        // Register tradable if its not registered already
+        if (getTradables().contains(tradable) == false) {
+            getTradables().add(tradable);
         }
     }
 
@@ -132,7 +132,7 @@ public class Level extends Action implements ILevel {
     }
 
     @Override
-    public void setTradeables(final ArrayList<ITradeable> tradeables) {
-        this.tradeables = tradeables;
+    public void setTradables(final ArrayList<ITradable> tradables) {
+        this.tradables = tradables;
     }
 }

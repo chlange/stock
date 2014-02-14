@@ -1,4 +1,4 @@
-package de.stock.tradeable;
+package de.stock.tradable;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -21,8 +21,12 @@ import de.stock.environment.types.Location;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
 import de.stock.settings.Settings_Deserializer;
+import de.stock.tradable.Commodity;
+import de.stock.tradable.Stock;
+import de.stock.tradable.Tradable;
+import de.stock.tradable.TradableHandler;
 
-public class TradeableHandlerTest {
+public class TradableHandlerTest {
 
     @Before
     public void setUp() throws Exception {
@@ -34,10 +38,10 @@ public class TradeableHandlerTest {
 
     @Test
     public void testLoadTradeables() {
-        TradeableHandler.getInstance().getTradeables().clear();
-        assertEquals(0, TradeableHandler.getInstance().getTradeables().size());
+        TradableHandler.getInstance().getTradables().clear();
+        assertEquals(0, TradableHandler.getInstance().getTradables().size());
 
-        final File tradeableFile = new File("res/tradeables/tradeable.trd");
+        final File tradeableFile = new File("res/tradeables/tradable.trd");
         final File tradeableWrongFile = new File("res/tradeables/tradeableWrong.tra");
         tradeableFile.deleteOnExit();
         tradeableWrongFile.deleteOnExit();
@@ -50,14 +54,14 @@ public class TradeableHandlerTest {
             fail("Unable to create files " + e);
         }
 
-        // Create tradeable
-        final Tradeable stock = new Stock();
+        // Create tradable
+        final Tradable stock = new Stock();
         stock.setName("Drink");
 
-        // Serialize tradeable
+        // Serialize tradable
         final String serializedTradeable = Deserializer.serialize(stock);
 
-        // Write serialzied tradeable to file
+        // Write serialzied tradable to file
         try {
             final FileWriter trdStream = new FileWriter(tradeableFile);
             final BufferedWriter outTrd = new BufferedWriter(trdStream);
@@ -75,9 +79,9 @@ public class TradeableHandlerTest {
         // Deserialize Tradeables
         Deserializer.deserialize(Settings_Deserializer.TYPE_TRADEABLE);
 
-        // Check if correct tradeable was deserialized
-        assertEquals(1, TradeableHandler.getInstance().getTradeables().size());
-        assertEquals("Drink", TradeableHandler.getInstance().getTradeables().iterator().next()
+        // Check if correct tradable was deserialized
+        assertEquals(1, TradableHandler.getInstance().getTradables().size());
+        assertEquals("Drink", TradableHandler.getInstance().getTradables().iterator().next()
                 .getName());
     }
 
@@ -87,12 +91,12 @@ public class TradeableHandlerTest {
         stock.setInfluenceBottomBound(2.0);
         stock.setInfluenceTopBound(2.0);
 
-        TradeableHandler.getInstance().getTempTradeables().clear();
-        assertTrue(TradeableHandler.getInstance().getTempTradeables().isEmpty());
-        TradeableHandler.getInstance().getActiveTradeables().clear();
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 10.0);
-        TradeableHandler.getInstance().saveCurrentState();
-        assertFalse(TradeableHandler.getInstance().getTempTradeables().isEmpty());
+        TradableHandler.getInstance().getTempTradables().clear();
+        assertTrue(TradableHandler.getInstance().getTempTradables().isEmpty());
+        TradableHandler.getInstance().getActiveTradables().clear();
+        TradableHandler.getInstance().getActiveTradables().put(stock, 10.0);
+        TradableHandler.getInstance().saveCurrentState();
+        assertFalse(TradableHandler.getInstance().getTempTradables().isEmpty());
     }
 
     @Test
@@ -111,27 +115,27 @@ public class TradeableHandlerTest {
         final EnvironmentGroup eg = new EnvironmentGroup();
         eg.setInfluenceLimit(1.0, 1.0);
         final Location germany = new Location();
-        germany.registerTradeable(stock);
+        germany.registerTradable(stock);
         eg.registerEnvironment(germany);
         final Event event = new MainEvent();
         event.registerEnvironmentGroup(eg);
         ActionObserver.getInstance().getActiveEvents().put(event, 2);
-        TradeableHandler.getInstance().getActiveTradeables().put(stock, 5.0);
-        TradeableHandler.getInstance().getActiveTradeables().put(bond, 5.0);
+        TradableHandler.getInstance().getActiveTradables().put(stock, 5.0);
+        TradableHandler.getInstance().getActiveTradables().put(bond, 5.0);
         assertEquals(new Double(5.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock));
+                TradableHandler.getInstance().getActiveTradables().get(stock));
 
         // Save state
-        TradeableHandler.getInstance().saveCurrentState();
+        TradableHandler.getInstance().saveCurrentState();
         // Iterate events (change stock by 1%)
         ActionObserver.getInstance().iterateActiveEvents();
         assertEquals(new Double(5.0),
-                TradeableHandler.getInstance().getActiveTradeables().get(stock), 0.05);
-        assertEquals(new Double(5.0), TradeableHandler.getInstance().getActiveTradeables()
+                TradableHandler.getInstance().getActiveTradables().get(stock), 0.05);
+        assertEquals(new Double(5.0), TradableHandler.getInstance().getActiveTradables()
                 .get(bond));
         // Update unchanged (change bond by 2.0)
-        TradeableHandler.getInstance().updateUnchangedTradeables();
-        assertEquals(new Double(5.0), TradeableHandler.getInstance().getActiveTradeables()
+        TradableHandler.getInstance().updateUnchangedTradables();
+        assertEquals(new Double(5.0), TradableHandler.getInstance().getActiveTradables()
                 .get(bond), 2.0);
     }
 }

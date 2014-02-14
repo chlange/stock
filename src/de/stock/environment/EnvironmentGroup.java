@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * An {@link de.stock.event.Event event} can influence a single
- * {@link de.stock.tradeable.ITradeable tradeable}, an
+ * {@link de.stock.tradable.ITradable tradable}, an
  * {@link de.stock.environment.IEnvironment environment} (and therefore the
  * tradeables influenced by the environment) or an environment group which
  * consists of multiple {@link de.stock.environment.IEnvironment environments} <br>
@@ -15,13 +15,13 @@ import java.util.ArrayList;
  * tradeables of the environments are influenced only <br>
  * <br>
  * Example:<br> {@link de.stock.environment.IEnvironment Environment} E1 influences
- * {@link de.stock.tradeable.ITradeable tradeable} T1 and T2<br>
+ * {@link de.stock.tradable.ITradable tradable} T1 and T2<br>
  * {@link de.stock.environment.IEnvironment Environment} E2 influences
- * {@link de.stock.tradeable.ITradeable tradeable} T2 and T3<br>
+ * {@link de.stock.tradable.ITradable tradable} T2 and T3<br>
  * <br> {@link de.stock.event.Event Event} A with single environments E1 and E2 will
  * influence T1, T2 and T3<br> {@link de.stock.event.Event Event} B with environment
  * group consisting of E1 and E2 will influence T2 only
- * as T2 is the intersecting tradeable of E1 and E2
+ * as T2 is the intersecting tradable of E1 and E2
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
  */
@@ -70,7 +70,7 @@ public class EnvironmentGroup {
     }
 
     /**
-     * Returns true if the influence is positive (tradeable value rises)
+     * Returns true if the influence is positive (tradable value rises)
      * 
      * @return true if positive influence
      */
@@ -133,7 +133,7 @@ public class EnvironmentGroup {
     }
 
     /**
-     * Set influence of environment group negative (tradeable value falls)
+     * Set influence of environment group negative (tradable value falls)
      */
     public void setInfluenceNegative() {
 
@@ -141,7 +141,7 @@ public class EnvironmentGroup {
     }
 
     /**
-     * Set influence of environment group positive (tradeable value rises)
+     * Set influence of environment group positive (tradable value rises)
      */
     public void setInfluencePositive() {
 
@@ -175,7 +175,7 @@ public class EnvironmentGroup {
     /**
      * Sets sign of environment group influence<br>
      * <br>
-     * If {@code influenceIsPositive} is true the tradeable values influenced by
+     * If {@code influenceIsPositive} is true the tradable values influenced by
      * this
      * group raise otherwise they fall
      * 

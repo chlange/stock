@@ -14,8 +14,8 @@ import de.stock.level.LevelPackHandler;
 import de.stock.settings.Settings_Deserializer;
 import de.stock.settings.Settings_Event;
 import de.stock.settings.Settings_Output;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.Printer;
 import de.stock.utils.Priority;
 import de.stock.utils.Utils;
@@ -174,7 +174,7 @@ public class ActionObserver {
      * Iterates over active levels and chooses next if time is reached<br>
      * <br>
      * Adds/Removes level (and/or level pack) specific content (events and
-     * tradeables) from event observer or tradeable handler if level (and/or
+     * tradeables) from event observer or tradable handler if level (and/or
      * level pack) got added or removed
      */
     public void iterateActiveLevels() {
@@ -378,9 +378,9 @@ public class ActionObserver {
         }
 
         // Register all tradeables
-        if (level.getTradeables() != null) {
-            for (final ITradeable tradeable : level.getTradeables()) {
-                TradeableHandler.getInstance().register(tradeable);
+        if (level.getTradables() != null) {
+            for (final ITradable tradable : level.getTradables()) {
+                TradableHandler.getInstance().register(tradable);
             }
         }
     }
@@ -399,10 +399,10 @@ public class ActionObserver {
             }
         }
 
-        if (levelPack.getTradeables() != null) {
+        if (levelPack.getTradables() != null) {
             // Register level pack specific tradeables to active tradeables
-            for (final ITradeable tradeable : levelPack.getTradeables()) {
-                TradeableHandler.getInstance().registerActiveTradeable(tradeable);
+            for (final ITradable tradable : levelPack.getTradables()) {
+                TradableHandler.getInstance().registerActiveTradable(tradable);
             }
         }
     }
@@ -422,9 +422,9 @@ public class ActionObserver {
         }
 
         // Register level specific tradeables
-        if (level.getTradeables() != null) {
-            for (final ITradeable tradeable : level.getTradeables()) {
-                TradeableHandler.getInstance().register(tradeable);
+        if (level.getTradables() != null) {
+            for (final ITradable tradable : level.getTradables()) {
+                TradableHandler.getInstance().register(tradable);
             }
         }
     }
@@ -443,18 +443,18 @@ public class ActionObserver {
         }
 
         // Remove level pack specific tradeables
-        // TODO: If player owns one or more stocks of a tradeable that will be deleted ask him if he wants to sell or keep them!
-        if (level.getLevelPack() != null && level.getLevelPack().getTradeables() != null) {
-            for (final ITradeable tradeable : level.getLevelPack().getTradeables()) {
+        // TODO: If player owns one or more stocks of a tradable that will be deleted ask him if he wants to sell or keep them!
+        if (level.getLevelPack() != null && level.getLevelPack().getTradables() != null) {
+            for (final ITradable tradable : level.getLevelPack().getTradables()) {
                 /**
                  * Pseudo - Not tested:
                  * 
-                 * if(Player.getTradeables().containsKey(tradeable)) {
+                 * if(Player.getTradeables().containsKey(tradable)) {
                  *     Ask player to sell or keep tradeables
                  * }
                  * 
                  */
-                TradeableHandler.getInstance().getActiveTradeables().remove(tradeable);
+                TradableHandler.getInstance().getActiveTradables().remove(tradable);
             }
         }
     }
@@ -473,18 +473,18 @@ public class ActionObserver {
         }
 
         // Remove level specific tradeables of passed level
-        // TODO: If player owns one or more stocks of a tradeable that will be deleted ask him if he wants to sell or keep them!
-        if (level.getTradeables() != null) {
-            for (final ITradeable tradeable : level.getTradeables()) {
+        // TODO: If player owns one or more stocks of a tradable that will be deleted ask him if he wants to sell or keep them!
+        if (level.getTradables() != null) {
+            for (final ITradable tradable : level.getTradables()) {
                 /**
                  * Pseudo - Not tested:
                  * 
-                 * if(Player.getTradeables().containsKey(tradeable)) {
+                 * if(Player.getTradeables().containsKey(tradable)) {
                  *     Ask player to sell or keep tradeables
                  * }
                  * 
                  */
-                TradeableHandler.getInstance().getActiveTradeables().remove(tradeable);
+                TradableHandler.getInstance().getActiveTradables().remove(tradable);
             }
         }
     }

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import de.stock.event.Event;
 import de.stock.event.types.MainEvent;
 import de.stock.settings.Settings_Output;
-import de.stock.tradeable.ITradeable;
+import de.stock.tradable.ITradable;
 import de.stock.utils.InputReader;
 import de.stock.utils.Printer;
 import de.stock.utils.Utils;
@@ -38,10 +38,10 @@ public abstract class LevelPack implements ILevelPack {
     private boolean               hasOption;
 
     /**
-     * Tradeables in this level pack (each level may have specific tradeables,
+     * Tradeables in this level pack (each level may have specific tradables,
      * too)
      */
-    private ArrayList<ITradeable> tradeables;
+    private ArrayList<ITradable> tradables;
 
     /**
      * Events in this level pack (each level may have specific events, too)
@@ -55,7 +55,7 @@ public abstract class LevelPack implements ILevelPack {
 
     public LevelPack() {
         firstLevels = new ArrayList<ILevel>();
-        tradeables = new ArrayList<ITradeable>();
+        tradables = new ArrayList<ITradable>();
         events = new ArrayList<MainEvent>();
     }
 
@@ -63,7 +63,7 @@ public abstract class LevelPack implements ILevelPack {
         this.name = name;
         this.description = description;
         firstLevels = new ArrayList<ILevel>();
-        tradeables = new ArrayList<ITradeable>();
+        tradables = new ArrayList<ITradable>();
         events = new ArrayList<MainEvent>();
     }
 
@@ -103,19 +103,19 @@ public abstract class LevelPack implements ILevelPack {
 
     @Override
     /**
-     * Add {@code tradeable} to level pack<br>
+     * Add {@code tradable} to level pack<br>
      * <br>
-     * This {@code tradeable} is active for the whole lifetime of the level pack
+     * This {@code tradable} is active for the whole lifetime of the level pack
      * 
-     * @param tradeable
-     *            tradeable for the whole lifetime of the level pack
+     * @param tradable
+     *            tradable for the whole lifetime of the level pack
      */
-    public void addTradeable(final ITradeable tradeable) {
-        if (tradeables.contains(tradeable)) {
+    public void addTradable(final ITradable tradable) {
+        if (tradables.contains(tradable)) {
             return;
         }
 
-        tradeables.add(tradeable);
+        tradables.add(tradable);
     }
 
     /**
@@ -199,8 +199,8 @@ public abstract class LevelPack implements ILevelPack {
     }
 
     @Override
-    public ArrayList<ITradeable> getTradeables() {
-        return tradeables;
+    public ArrayList<ITradable> getTradables() {
+        return tradables;
     }
 
     @Override
@@ -284,7 +284,7 @@ public abstract class LevelPack implements ILevelPack {
     }
 
     @Override
-    public void setTradeables(final ArrayList<ITradeable> tradeables) {
-        this.tradeables = tradeables;
+    public void setTradables(final ArrayList<ITradable> tradables) {
+        this.tradables = tradables;
     }
 }

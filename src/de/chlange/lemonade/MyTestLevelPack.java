@@ -8,7 +8,7 @@ import de.stock.event.types.MainEvent;
 import de.stock.level.ILevel;
 import de.stock.level.LevelPack;
 import de.stock.settings.Settings_Level;
-import de.stock.tradeable.Commodity;
+import de.stock.tradable.Commodity;
 
 @PluginImplementation
 public class MyTestLevelPack extends LevelPack {
@@ -37,7 +37,7 @@ public class MyTestLevelPack extends LevelPack {
         lemonPlantations.setName("Lemon plantations");
         lemonPlantations.setDescription("All lemon plantations");
 
-        // Level specific tradeable
+        // Level specific tradable
         final Commodity lemons = new Commodity();
         lemons.setName("Lemons");
         lemons.setDescription("The lemon is a small ellipsoidal yellow fruit");
@@ -57,7 +57,7 @@ public class MyTestLevelPack extends LevelPack {
         lemons.initializeShares();
         lemons.initializeValue();
 
-        // Level specific tradeable
+        // Level specific tradable
         final Commodity sugar = new Commodity();
         sugar.setName("Sugar");
         sugar.setDescription("The sugar");
@@ -126,10 +126,10 @@ public class MyTestLevelPack extends LevelPack {
         myEvent.registerEnvironmentGroup(greeceLemonPlantations);
         // Add event to level pack
         addEvent(myEvent);
-        // Add tradeable to level pack
-        addTradeable(lemons);
-        // Add tradeable to second level
-        mySecondLevel.registerTradeable(sugar);
+        // Add tradable to level pack
+        addTradable(lemons);
+        // Add tradable to second level
+        mySecondLevel.registerTradable(sugar);
         // Add level to level pack
         addFirstLevel(myLevel);
     }

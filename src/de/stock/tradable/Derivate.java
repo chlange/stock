@@ -1,4 +1,4 @@
-package de.stock.tradeable;
+package de.stock.tradable;
 
 /**
  * Not implemented!<br>
@@ -8,12 +8,12 @@ package de.stock.tradeable;
  * price
  * drops, you get wonga.
  * 
- * See {@link de.stock.tradeable.ITradeable ITradeable} for further information
+ * See {@link de.stock.tradable.ITradable ITradable} for further information
  * on tradeables
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
  */
-public class Derivate extends Tradeable implements ITradeable {
+public class Derivate extends Tradable implements ITradable {
 
     private Derivate() {
         super();
