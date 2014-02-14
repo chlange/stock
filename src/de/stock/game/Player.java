@@ -44,7 +44,7 @@ public class Player {
     private String                    nationality;
 
     /**
-     * All player owned tradables with the amount
+     * All tradables which player owns
      */
     private HashMap<ITradable, Long> tradables;
 
