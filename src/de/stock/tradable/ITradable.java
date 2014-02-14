@@ -5,9 +5,9 @@ import java.util.HashSet;
 import de.stock.environment.IEnvironment;
 
 /**
- * Interface for tradeables<br>
+ * Interface for tradables<br>
  * <br>
- * Tradeables, which are stored in the
+ * Tradables, which are stored in the
  * {@link de.stock.tradable.TradableHandler TradableHandler}, consist of
  * several parts:<br>
  * <br>
@@ -137,7 +137,7 @@ public interface ITradable {
      * value in between {@link #getInfluenceBottomBound()} and
      * {@link #setInfluenceTopBound(Double)}<br>
      * The sign of the value is random, too. (See
-     * {@link de.stock.settings.Settings_Tradeable SIGN_NEGATIVE_BOUND})
+     * {@link de.stock.settings.Settings_Tradable SIGN_NEGATIVE_BOUND})
      * 
      * @return new value of tradable
      */

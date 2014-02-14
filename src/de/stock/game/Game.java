@@ -33,17 +33,17 @@ public class Game {
 
     static Integer nrEvents;
     static Integer nrEnvironments;
-    static Integer nrTradeables;
+    static Integer nrTradables;
     static Integer nrLevelPacks;
     static Integer round;
 
     /**
-     * Load all content (events, tradeables, levelpacks, environments)
+     * Load all content (events, tradables, levelpacks, environments)
      */
     public static void loadContent() {
         nrEvents = ActionObserver.getInstance().loadEvents();
         nrEnvironments = EnvironmentHandler.getInstance().loadEnvironments();
-        nrTradeables = TradableHandler.getInstance().loadTradeables();
+        nrTradables = TradableHandler.getInstance().loadTradables();
 
         // Load events from resource path
         // Network loading possible
@@ -151,7 +151,7 @@ public class Game {
                     } else {
                         if (entry.getKey().getShares() - amount >= 0) {
                             Player.getInstance().decMoney(entry.getValue() * amount);
-                            Player.getInstance().incBoughtTradeables(amount);
+                            Player.getInstance().incBoughtTradables(amount);
                             Player.getInstance().addTradable(entry.getKey(), amount.longValue());
                             entry.getKey().decShares(amount);
                         } else {
@@ -173,7 +173,7 @@ public class Game {
                     }
 
                     Player.getInstance().incMoney(entry.getValue() * amount);
-                    Player.getInstance().decBoughtTradeables(amount);
+                    Player.getInstance().decBoughtTradables(amount);
                     Player.getInstance().getTradables().remove(entry.getKey());
                     entry.getKey().incShares(amount);
                 }

@@ -9,7 +9,7 @@ package de.stock.tradable;
  * drops, you get wonga.
  * 
  * See {@link de.stock.tradable.ITradable ITradable} for further information
- * on tradeables
+ * on tradables
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
  */

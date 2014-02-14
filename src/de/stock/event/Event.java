@@ -23,7 +23,7 @@ import de.stock.utils.Priority;
  * event only.<br>
  * <br>
  * (These events can influence {@link de.stock.environment.IEnvironment
- * environments}, {@link de.stock.tradable.ITradable tradeables} (through
+ * environments}, {@link de.stock.tradable.ITradable tradables} (through
  * {@link de.stock.environment.EnvironmentGroup environment groups}) and
  * {@link de.stock.settings.Settings_Influencable other objects})<br>
  * <br>
@@ -119,7 +119,7 @@ public class Event extends Action {
     /**
      * Register a single environment<br>
      * <br>
-     * The tradeables of this environment get influenced by a random percentage
+     * The tradables of this environment get influenced by a random percentage
      * between {@code percentageBottomLimit} and {@code percentageTopLimit}<br>
      * <br>
      * (Gets internally saved as a environment group)<br>
@@ -127,7 +127,7 @@ public class Event extends Action {
      * @param environment
      *            Environment to register
      * @param isPositive
-     *            Indicates whether the environment lets the tradeables raise
+     *            Indicates whether the environment lets the tradables raise
      *            (true) or fall (false)
      * @param percentageBottomLimit
      *            Bottom limit of influence in percent

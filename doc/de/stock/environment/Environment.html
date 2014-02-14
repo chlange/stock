@@ -144,9 +144,9 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 <td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#name">name</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>private java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
+<td class="colFirst"><code>private java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#tradeables">tradeables</a></strong></code>
-<div class="block">Current environment influences ITradeable</div>
+<div class="block">Current environment influences ITradable</div>
 </td>
 </tr>
 </table>
@@ -188,8 +188,8 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 <td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getDescription()">getDescription</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getInfluencedTradeables()">getInfluencedTradeables</a></strong>()</code>
+<td class="colFirst"><code>java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getInfluencedTradables()">getInfluencedTradables</a></strong>()</code>
 <div class="block">Adds all directly available and linked by other enviroments affected
  tradeables recursively</div>
 </td>
@@ -203,8 +203,8 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 <td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getName()">getName</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getTradeables()">getTradeables</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#getTradables()">getTradables</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -220,7 +220,7 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#registerTradeable(de.stock.tradeable.ITradeable)">registerTradeable</a></strong>(<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&nbsp;tradeable)</code>
+<td class="colLast"><code><strong><a href="../../../de/stock/environment/Environment.html#registerTradable(de.stock.tradeable.ITradable)">registerTradable</a></strong>(<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&nbsp;tradeable)</code>
 <div class="block">Register tradeable which is part of the environment</div>
 </td>
 </tr>
@@ -288,8 +288,8 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 <ul class="blockListLast">
 <li class="blockList">
 <h4>tradeables</h4>
-<pre>private final&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt; tradeables</pre>
-<div class="block">Current environment influences ITradeable</div>
+<pre>private final&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt; tradeables</pre>
+<div class="block">Current environment influences ITradable</div>
 </li>
 </ul>
 </li>
@@ -330,18 +330,18 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 </dl>
 </li>
 </ul>
-<a name="getInfluencedTradeables()">
+<a name="getInfluencedTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getInfluencedTradeables</h4>
-<pre>public&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;getInfluencedTradeables()</pre>
+<h4>getInfluencedTradables</h4>
+<pre>public&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;getInfluencedTradables()</pre>
 <div class="block">Adds all directly available and linked by other enviroments affected
  tradeables recursively</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/environment/IEnvironment.html#getInfluencedTradeables()">getInfluencedTradeables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
+<dd><code><a href="../../../de/stock/environment/IEnvironment.html#getInfluencedTradables()">getInfluencedTradables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
 <dt><span class="strong">Returns:</span></dt><dd>Returns all affected tradeables of current environment</dd></dl>
 </li>
 </ul>
@@ -371,16 +371,16 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 </dl>
 </li>
 </ul>
-<a name="getTradeables()">
+<a name="getTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTradeables</h4>
-<pre>public&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;getTradeables()</pre>
+<h4>getTradables</h4>
+<pre>public&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;getTradables()</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/environment/IEnvironment.html#getTradeables()">getTradeables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
+<dd><code><a href="../../../de/stock/environment/IEnvironment.html#getTradables()">getTradables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -405,18 +405,18 @@ implements <a href="../../../de/stock/environment/IEnvironment.html" title="inte
 <dt><span class="strong">Returns:</span></dt><dd>true if it was allowed to link</dd></dl>
 </li>
 </ul>
-<a name="registerTradeable(de.stock.tradeable.ITradeable)">
+<a name="registerTradable(de.stock.tradeable.ITradable)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>registerTradeable</h4>
-<pre>public&nbsp;void&nbsp;registerTradeable(<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&nbsp;tradeable)</pre>
+<h4>registerTradable</h4>
+<pre>public&nbsp;void&nbsp;registerTradable(<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&nbsp;tradeable)</pre>
 <div class="block">Register tradeable which is part of the environment</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/environment/IEnvironment.html#registerTradeable(de.stock.tradeable.ITradeable)">registerTradeable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>tradeable</code> - Tradeable that gets linked</dd></dl>
+<dd><code><a href="../../../de/stock/environment/IEnvironment.html#registerTradable(de.stock.tradeable.ITradable)">registerTradable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment">IEnvironment</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>tradeable</code> - Tradable that gets linked</dd></dl>
 </li>
 </ul>
 <a name="setDescription(java.lang.String)">

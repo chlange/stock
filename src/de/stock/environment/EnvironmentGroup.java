@@ -6,13 +6,13 @@ import java.util.ArrayList;
  * An {@link de.stock.event.Event event} can influence a single
  * {@link de.stock.tradable.ITradable tradable}, an
  * {@link de.stock.environment.IEnvironment environment} (and therefore the
- * tradeables influenced by the environment) or an environment group which
+ * tradables influenced by the environment) or an environment group which
  * consists of multiple {@link de.stock.environment.IEnvironment environments} <br>
  * <br>
  * The difference between multiple environments and one environment group
- * containing these environments is that all tradeables of the multiple
+ * containing these environments is that all tradables of the multiple
  * environments are influenced and with the environment group the intersecting
- * tradeables of the environments are influenced only <br>
+ * tradables of the environments are influenced only <br>
  * <br>
  * Example:<br> {@link de.stock.environment.IEnvironment Environment} E1 influences
  * {@link de.stock.tradable.ITradable tradable} T1 and T2<br>

@@ -11,10 +11,10 @@ public final class Provider {
 
     /**
      * Returns all currently active {@link de.stock.tradable.Tradable
-     * tradeables} and their values
+     * tradables} and their values
      * 
      * @return a Map of all currently active
-     *         {@link de.stock.tradable.Tradable tradeables} and their values
+     *         {@link de.stock.tradable.Tradable tradables} and their values
      */
     public static HashMap<ITradable, Double> getAllActiveTradables() {
         return TradableHandler.getInstance().getActiveTradables();
@@ -22,10 +22,10 @@ public final class Provider {
 
     /**
      * Returns all registered - inconclusively running -
-     * {@link de.stock.tradable.Tradable tradeables}
+     * {@link de.stock.tradable.Tradable tradables}
      * 
      * @return a Set of all registered - inconclusively running -
-     *         {@link de.stock.tradable.Tradable tradeables}
+     *         {@link de.stock.tradable.Tradable tradables}
      */
     public static HashSet<ITradable> getAllTradables() {
         return TradableHandler.getInstance().getTradables();

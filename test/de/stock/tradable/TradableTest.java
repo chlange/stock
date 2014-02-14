@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.stock.settings.Settings_Tradeable;
+import de.stock.settings.Settings_Tradable;
 import de.stock.tradable.ITradable;
 import de.stock.tradable.Tradable;
 
@@ -42,6 +42,6 @@ public class TradableTest {
         tradable.setInfluenceTopBound(1.0);
         tradable.setInfluenceBottomBound(1.0);
         tradable.updateValue();
-        assertEquals(0.0, tradable.getValue(), Settings_Tradeable.RESET_TOP_LIMIT);
+        assertEquals(0.0, tradable.getValue(), Settings_Tradable.RESET_TOP_LIMIT);
     }
 }

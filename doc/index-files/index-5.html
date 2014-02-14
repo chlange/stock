@@ -77,7 +77,7 @@
 <dt><a href="../de/stock/environment/EnvironmentGroup.html" title="class in de.stock.environment"><span class="strong">EnvironmentGroup</span></a> - Class in <a href="../de/stock/environment/package-summary.html">de.stock.environment</a></dt>
 <dd>
 <div class="block">An <a href="../de/stock/event/Event.html" title="class in de.stock.event"><code>event</code></a> can influence a single
- <a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a>, an
+ <a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a>, an
  <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>environment</code></a> (and therefore the
  tradeables influenced by the environment) or an environment group which
  consists of multiple <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>environments</code></a> <br>
@@ -88,9 +88,9 @@
  tradeables of the environments are influenced only <br>
  <br>
  Example:<br> <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>Environment</code></a> E1 influences
- <a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a> T1 and T2<br>
+ <a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a> T1 and T2<br>
  <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>Environment</code></a> E2 influences
- <a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a> T2 and T3<br>
+ <a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>tradeable</code></a> T2 and T3<br>
  <br> <a href="../de/stock/event/Event.html" title="class in de.stock.event"><code>Event</code></a> A with single environments E1 and E2 will
  influence T1, T2 and T3<br> <a href="../de/stock/event/Event.html" title="class in de.stock.event"><code>Event</code></a> B with environment
  group consisting of E1 and E2 will influence T2 only
@@ -129,7 +129,7 @@
  - <a href="../de/stock/event/types/SubEvent.html" title="class in de.stock.event.types"><code>SubEvent</code></a> can be started by another
  event only.<br>
  <br>
- (These events can influence <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>environments</code></a>, <a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>tradeables</code></a> (through
+ (These events can influence <a href="../de/stock/environment/IEnvironment.html" title="interface in de.stock.environment"><code>environments</code></a>, <a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>tradeables</code></a> (through
  <a href="../de/stock/environment/EnvironmentGroup.html" title="class in de.stock.environment"><code>environment groups</code></a>) and
  <a href="../de/stock/settings/Settings_Influencable.html" title="class in de.stock.settings"><code>other objects</code></a>)<br>
  <br>

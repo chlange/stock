@@ -6,7 +6,7 @@ package de.stock.settings;
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
  */
-public final class Settings_Tradeable {
+public final class Settings_Tradable {
 
     /**
      * Used in {@link de.stock.tradable.Tradable#updateValue()

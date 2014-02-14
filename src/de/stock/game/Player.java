@@ -33,7 +33,7 @@ public class Player {
     /**
      * Overall number of bought tradables
      */
-    private long                      boughtTradeables;
+    private long                      boughtTradables;
     /**
      * The currency symbol
      */
@@ -50,7 +50,7 @@ public class Player {
 
     private Player() {
         money = 0;
-        boughtTradeables = 0;
+        boughtTradables = 0;
         tradables = new HashMap<ITradable, Long>();
     }
 
@@ -95,16 +95,16 @@ public class Player {
         surname = InputReader.readLine();
     }
 
-    public void decBoughtTradeables(final long value) {
-        boughtTradeables -= value;
+    public void decBoughtTradables(final long value) {
+        boughtTradables -= value;
     }
 
     public void decMoney(final double money) {
         this.money -= money;
     }
 
-    public long getBoughtTradeables() {
-        return boughtTradeables;
+    public long getBoughtTradables() {
+        return boughtTradables;
     }
 
     public String getCurrency() {
@@ -134,8 +134,8 @@ public class Player {
         return tradables;
     }
 
-    public void incBoughtTradeables(final long value) {
-        boughtTradeables += value;
+    public void incBoughtTradables(final long value) {
+        boughtTradables += value;
     }
 
     public void incMoney(final double money) {
@@ -143,8 +143,8 @@ public class Player {
         this.money += money;
     }
 
-    public void setBoughtTradeables(final long boughtTradeables) {
-        this.boughtTradeables = boughtTradeables;
+    public void setBoughtTradables(final long boughtTradables) {
+        this.boughtTradables = boughtTradables;
     }
 
     public void setCurrency(final String currency) {

@@ -11,7 +11,7 @@ import de.stock.utils.Utils;
 
 /**
  * The environment handler holds all environments as a centralized storage for
- * those and is the single point of contact for events to influence tradeables
+ * those and is the single point of contact for events to influence tradables
  * with {@link #influenceEnvironments(ArrayList)}
  * 
  * @author <a href="mailto:Christian_Lange@hotmail.com">chlange</a>
@@ -41,7 +41,7 @@ public class EnvironmentHandler {
     }
 
     /**
-     * Influences all tradeables linked to all environmentGroups<br>
+     * Influences all tradables linked to all environmentGroups<br>
      * <br>
      * If a tradable is found more than once in a environmentGroup it gets
      * affected only once!<br>
@@ -59,9 +59,9 @@ public class EnvironmentHandler {
 
         Integer i = 0;
 
-        // List of all tradeables which are influenced
+        // List of all tradables which are influenced
         ArrayList<ITradable> finalTradables = new ArrayList<ITradable>();
-        // Temporary storage for all tradeables
+        // Temporary storage for all tradables
         ArrayList<ArrayList<ITradable>> tradableArray = new ArrayList<ArrayList<ITradable>>();
 
         // Iterate over each group
@@ -70,27 +70,27 @@ public class EnvironmentHandler {
             tradableArray = new ArrayList<ArrayList<ITradable>>();
             i = 0;
 
-            // Iterate over each environment and save affected tradeables
+            // Iterate over each environment and save affected tradables
             for (final Environment environment : environmentGroup.getEnvironments()) {
 
-                // Get all affected tradeables from current environment
+                // Get all affected tradables from current environment
                 final HashSet<ITradable> tempTradables = environment.getInfluencedTradables();
 
-                // Create new tradable array and add tradeables
+                // Create new tradable array and add tradables
                 tradableArray.add(i, new ArrayList<ITradable>());
                 tradableArray.get(i).addAll(tempTradables);
 
                 i++;
             }
 
-            // Get all intersecting tradeables of all environments in
+            // Get all intersecting tradables of all environments in
             // current environment group
             if (tradableArray.isEmpty() == false) {
 
                 finalTradables.addAll(tradableArray.get(0));
 
-                for (final ArrayList<ITradable> tradeablelist : tradableArray) {
-                    finalTradables.retainAll(tradeablelist);
+                for (final ArrayList<ITradable> tradablelist : tradableArray) {
+                    finalTradables.retainAll(tradablelist);
                 }
             }
 

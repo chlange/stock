@@ -134,16 +134,16 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Double&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getAllActiveTradeables()">getAllActiveTradeables</a></strong>()</code>
-<div class="block">Returns all currently active <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</div>
+<td class="colFirst"><code>static java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Double&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getAllActiveTradables()">getAllActiveTradables</a></strong>()</code>
+<div class="block">Returns all currently active <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getAllTradeables()">getAllTradeables</a></strong>()</code>
+<td class="colFirst"><code>static java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getAllTradables()">getAllTradables</a></strong>()</code>
 <div class="block">Returns all registered - inconclusively running -
- <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></div>
+ <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></div>
 </td>
 </tr>
 <tr class="altColor">
@@ -153,9 +153,9 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a></code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getTradeableHandler()">getTradeableHandler</a></strong>()</code>
-<div class="block">Returns the active <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a> object</div>
+<td class="colFirst"><code>static <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a></code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/utils/Provider.html#getTradableHandler()">getTradableHandler</a></strong>()</code>
+<div class="block">Returns the active <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a> object</div>
 </td>
 </tr>
 </table>
@@ -197,29 +197,29 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getAllActiveTradeables()">
+<a name="getAllActiveTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getAllActiveTradeables</h4>
-<pre>public static&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Double&gt;&nbsp;getAllActiveTradeables()</pre>
-<div class="block">Returns all currently active <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</div>
+<h4>getAllActiveTradables</h4>
+<pre>public static&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Double&gt;&nbsp;getAllActiveTradables()</pre>
+<div class="block">Returns all currently active <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>a Map of all currently active
-         <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</dd></dl>
+         <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and their values</dd></dl>
 </li>
 </ul>
-<a name="getAllTradeables()">
+<a name="getAllTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getAllTradeables</h4>
-<pre>public static&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;getAllTradeables()</pre>
+<h4>getAllTradables</h4>
+<pre>public static&nbsp;java.util.HashSet&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;getAllTradables()</pre>
 <div class="block">Returns all registered - inconclusively running -
- <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></div>
+ <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></div>
 <dl><dt><span class="strong">Returns:</span></dt><dd>a Set of all registered - inconclusively running -
-         <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></dd></dl>
+         <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a></dd></dl>
 </li>
 </ul>
 <a name="getPlayer()">
@@ -233,15 +233,15 @@ extends java.lang.Object</pre>
 <dl><dt><span class="strong">Returns:</span></dt><dd>the active <a href="../../../de/stock/game/Player.html" title="class in de.stock.game"><code>Player</code></a> object</dd></dl>
 </li>
 </ul>
-<a name="getTradeableHandler()">
+<a name="getTradableHandler()">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getTradeableHandler</h4>
-<pre>public static&nbsp;<a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a>&nbsp;getTradeableHandler()</pre>
-<div class="block">Returns the active <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a> object</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>the active <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a> object</dd></dl>
+<h4>getTradableHandler</h4>
+<pre>public static&nbsp;<a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a>&nbsp;getTradableHandler()</pre>
+<div class="block">Returns the active <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a> object</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>the active <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a> object</dd></dl>
 </li>
 </ul>
 </li>

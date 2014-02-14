@@ -3,7 +3,7 @@ package de.stock.tradable;
 import java.util.HashSet;
 
 import de.stock.environment.IEnvironment;
-import de.stock.settings.Settings_Tradeable;
+import de.stock.settings.Settings_Tradable;
 import de.stock.utils.Utils;
 
 /**
@@ -245,20 +245,20 @@ public class Tradable implements ITradable {
      * value in between {@link #getInfluenceBottomBound()} and
      * {@link #setInfluenceTopBound(Double)}<br>
      * The sign of the value is random, too.
-     * {@link de.stock.settings.Settings_Tradeable#SIGN_NEGATIVE_BOUND}
+     * {@link de.stock.settings.Settings_Tradable#SIGN_NEGATIVE_BOUND}
      * 
      * @return new value of tradable
      */
     @Override
     public Double updateValue() {
 
-        final Integer sign = (Utils.random(0, 100) > Settings_Tradeable.SIGN_NEGATIVE_BOUND) ? 1
+        final Integer sign = (Utils.random(0, 100) > Settings_Tradable.SIGN_NEGATIVE_BOUND) ? 1
                 : -1;
         Double newValue = Utils.random(getInfluenceBottomBound(), getInfluenceTopBound()) * sign;
         newValue = getValue().doubleValue() + newValue;
         if (newValue <= 0) {
-            newValue = Utils.random(Settings_Tradeable.RESET_BOTTOM_LIMIT,
-                    Settings_Tradeable.RESET_TOP_LIMIT);
+            newValue = Utils.random(Settings_Tradable.RESET_BOTTOM_LIMIT,
+                    Settings_Tradable.RESET_TOP_LIMIT);
         }
 
         setValue(newValue);

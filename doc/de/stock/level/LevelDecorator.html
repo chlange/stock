@@ -187,8 +187,8 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 <td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#getLevelStage()">getLevelStage</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#getTradeables()">getTradeables</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#getTradables()">getTradables</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>abstract boolean</code></td>
@@ -202,7 +202,7 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#registerTradeable(de.stock.tradeable.ITradeable)">registerTradeable</a></strong>(<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&nbsp;tradeable)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#registerTradable(de.stock.tradeable.ITradable)">registerTradable</a></strong>(<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&nbsp;tradeable)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -218,7 +218,7 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#setTradeables(java.util.ArrayList)">setTradeables</a></strong>(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;tradeables)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/level/LevelDecorator.html#setTradables(java.util.ArrayList)">setTradables</a></strong>(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;tradeables)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -352,16 +352,16 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 </dl>
 </li>
 </ul>
-<a name="getTradeables()">
+<a name="getTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTradeables</h4>
-<pre>public&nbsp;java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;getTradeables()</pre>
+<h4>getTradables</h4>
+<pre>public&nbsp;java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;getTradables()</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/level/ILevel.html#getTradeables()">getTradeables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
+<dd><code><a href="../../../de/stock/level/ILevel.html#getTradables()">getTradables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -392,16 +392,16 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 </dl>
 </li>
 </ul>
-<a name="registerTradeable(de.stock.tradeable.ITradeable)">
+<a name="registerTradable(de.stock.tradeable.ITradable)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>registerTradeable</h4>
-<pre>public&nbsp;void&nbsp;registerTradeable(<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&nbsp;tradeable)</pre>
+<h4>registerTradable</h4>
+<pre>public&nbsp;void&nbsp;registerTradable(<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&nbsp;tradeable)</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/level/ILevel.html#registerTradeable(de.stock.tradeable.ITradeable)">registerTradeable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
+<dd><code><a href="../../../de/stock/level/ILevel.html#registerTradable(de.stock.tradeable.ITradable)">registerTradable</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -444,16 +444,16 @@ implements <a href="../../../de/stock/level/ILevel.html" title="interface in de.
 </dl>
 </li>
 </ul>
-<a name="setTradeables(java.util.ArrayList)">
+<a name="setTradables(java.util.ArrayList)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setTradeables</h4>
-<pre>public&nbsp;void&nbsp;setTradeables(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;tradeables)</pre>
+<h4>setTradables</h4>
+<pre>public&nbsp;void&nbsp;setTradables(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;tradeables)</pre>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../de/stock/level/ILevel.html#setTradeables(java.util.ArrayList)">setTradeables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
+<dd><code><a href="../../../de/stock/level/ILevel.html#setTradables(java.util.ArrayList)">setTradables</a></code>&nbsp;in interface&nbsp;<code><a href="../../../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></code></dd>
 </dl>
 </li>
 </ul>

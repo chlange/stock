@@ -32,7 +32,7 @@ public class TradableHandler {
      */
     private HashSet<ITradable>                tradables;
     /**
-     * Tradeables with their current value
+     * Tradables with their current value
      */
     private HashMap<ITradable, Double>        activeTradables;
 
@@ -89,7 +89,7 @@ public class TradableHandler {
      * @return
      *         number of loaded tradables
      */
-    public Integer loadTradeables() {
+    public Integer loadTradables() {
         return Deserializer.deserialize(Settings_Deserializer.TYPE_TRADEABLE);
     }
 

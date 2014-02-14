@@ -37,18 +37,18 @@ public class TradableHandlerTest {
     }
 
     @Test
-    public void testLoadTradeables() {
+    public void testLoadTradables() {
         TradableHandler.getInstance().getTradables().clear();
         assertEquals(0, TradableHandler.getInstance().getTradables().size());
 
-        final File tradeableFile = new File("res/tradeables/tradable.trd");
-        final File tradeableWrongFile = new File("res/tradeables/tradeableWrong.tra");
-        tradeableFile.deleteOnExit();
-        tradeableWrongFile.deleteOnExit();
+        final File tradableFile = new File("res/tradables/tradable.trd");
+        final File tradableWrongFile = new File("res/tradables/tradableWrong.tra");
+        tradableFile.deleteOnExit();
+        tradableWrongFile.deleteOnExit();
         // Create file
         try {
-            tradeableFile.createNewFile();
-            tradeableWrongFile.createNewFile();
+            tradableFile.createNewFile();
+            tradableWrongFile.createNewFile();
         }
         catch (final IOException e) {
             fail("Unable to create files " + e);
@@ -59,24 +59,24 @@ public class TradableHandlerTest {
         stock.setName("Drink");
 
         // Serialize tradable
-        final String serializedTradeable = Deserializer.serialize(stock);
+        final String serializedTradable = Deserializer.serialize(stock);
 
         // Write serialzied tradable to file
         try {
-            final FileWriter trdStream = new FileWriter(tradeableFile);
+            final FileWriter trdStream = new FileWriter(tradableFile);
             final BufferedWriter outTrd = new BufferedWriter(trdStream);
-            outTrd.write(serializedTradeable);
+            outTrd.write(serializedTradable);
             outTrd.close();
-            final FileWriter trdStreamWrong = new FileWriter(tradeableWrongFile);
+            final FileWriter trdStreamWrong = new FileWriter(tradableWrongFile);
             final BufferedWriter outTrdWrong = new BufferedWriter(trdStreamWrong);
-            outTrdWrong.write(serializedTradeable);
+            outTrdWrong.write(serializedTradable);
             outTrdWrong.close();
         }
         catch (final IOException e) {
             fail("Unable to write to files " + e);
         }
 
-        // Deserialize Tradeables
+        // Deserialize Tradables
         Deserializer.deserialize(Settings_Deserializer.TYPE_TRADEABLE);
 
         // Check if correct tradable was deserialized
@@ -100,7 +100,7 @@ public class TradableHandlerTest {
     }
 
     @Test
-    public void testUpdateUnchangedTradeables() {
+    public void testUpdateUnchangedTradables() {
         final Stock stock = new Stock();
         stock.setName("Stock");
         stock.setValue(5.0);

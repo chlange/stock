@@ -43,7 +43,7 @@ public final class Settings_Deserializer {
      * Serialized tradable path
      */
     public static String        PATH_TRADEABLES        = Settings_Game.PATH_RESOURCES
-                                                               + "tradeables/";
+                                                               + "tradables/";
     /**
      * Serialized event path
      */

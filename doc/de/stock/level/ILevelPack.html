@@ -113,7 +113,7 @@ extends net.xeoh.plugins.base.Plugin</pre>
  It may has tradeables which are available and events which can occur over the
  whole playtime of the level pack.<br>
  (Every level in a level pack may have specific
- <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> or
+ <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> or
  <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>, too!)<br>
  <br>
  The player can choose from these packs at the beginning of the game and if a
@@ -123,7 +123,7 @@ extends net.xeoh.plugins.base.Plugin</pre>
  levels:<br>
  <br>
  &nbsp;&nbsp;<u>1. Level:</u> Lemonade stand <br>
- &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  specific<br>
  &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
@@ -132,7 +132,7 @@ extends net.xeoh.plugins.base.Plugin</pre>
  prices raise</i> <br>
  <br>
  &nbsp;&nbsp;<u>2. Level:</u> Lemonade factory<br>
- &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  specific and 2. level specific <i>Limes and Saccharin</i><br>
  &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
@@ -142,7 +142,7 @@ extends net.xeoh.plugins.base.Plugin</pre>
  you 15000$</i><br>
  <br>
  &nbsp;&nbsp;<u>3. Level:</u> Lemonade concern<br>
- &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  specific and 3. level specific <i>Limes, Oranges, Saccharin and Thaumatin</i><br>
  &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
@@ -213,8 +213,8 @@ extends net.xeoh.plugins.base.Plugin</pre>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/level/ILevelPack.html#getTradeables()">getTradeables</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/level/ILevelPack.html#getTradables()">getTradables</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -265,7 +265,7 @@ extends net.xeoh.plugins.base.Plugin</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/level/ILevelPack.html#setTradeables(java.util.ArrayList)">setTradeables</a></strong>(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;tradeables)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/level/ILevelPack.html#setTradables(java.util.ArrayList)">setTradables</a></strong>(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;tradeables)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -357,13 +357,13 @@ extends net.xeoh.plugins.base.Plugin</pre>
          null</dd></dl>
 </li>
 </ul>
-<a name="getTradeables()">
+<a name="getTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTradeables</h4>
-<pre>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;getTradeables()</pre>
+<h4>getTradables</h4>
+<pre>java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;getTradables()</pre>
 </li>
 </ul>
 <a name="hasOption()">
@@ -462,13 +462,13 @@ extends net.xeoh.plugins.base.Plugin</pre>
 <pre>void&nbsp;setNation(java.lang.String&nbsp;nation)</pre>
 </li>
 </ul>
-<a name="setTradeables(java.util.ArrayList)">
+<a name="setTradables(java.util.ArrayList)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setTradeables</h4>
-<pre>void&nbsp;setTradeables(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>&gt;&nbsp;tradeables)</pre>
+<h4>setTradables</h4>
+<pre>void&nbsp;setTradables(java.util.ArrayList&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>&gt;&nbsp;tradeables)</pre>
 </li>
 </ul>
 </li>

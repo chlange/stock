@@ -67,11 +67,11 @@
 </a>
 <h2 class="title">S</h2>
 <dl>
-<dt><span class="strong"><a href="../de/stock/tradeable/TradeableHandler.html#saveCurrentState()">saveCurrentState()</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/TradableHandler.html#saveCurrentState()">saveCurrentState()</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a></dt>
 <dd>
-<div class="block">Saves current state of <a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a><br>
+<div class="block">Saves current state of <a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a><br>
  <br>
- Cooperates with <a href="../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>TradeableHandler.updateUnchangedTradeables()</code></a> to update tradeables
+ Cooperates with <a href="../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>TradableHandler.updateUnchangedTradables()</code></a> to update tradeables
  which weren't influenced by events</div>
 </dd>
 <dt><span class="strong"><a href="../de/stock/deserializer/Deserializer.html#serialize(java.lang.Object)">serialize(Object)</a></span> - Static method in class de.stock.deserializer.<a href="../de/stock/deserializer/Deserializer.html" title="class in de.stock.deserializer">Deserializer</a></dt>
@@ -82,9 +82,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/action/ActionObserver.html#setActiveLevels(java.util.ArrayList)">setActiveLevels(ArrayList&lt;ILevel&gt;)</a></span> - Method in class de.stock.action.<a href="../de/stock/action/ActionObserver.html" title="class in de.stock.action">ActionObserver</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/TradeableHandler.html#setActiveTradeables(java.util.HashMap)">setActiveTradeables(HashMap&lt;ITradeable, Double&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/TradableHandler.html#setActiveTradables(java.util.HashMap)">setActiveTradables(HashMap&lt;ITradable, Double&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/game/Player.html#setBoughtTradeables(long)">setBoughtTradeables(long)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
+<dt><span class="strong"><a href="../de/stock/game/Player.html#setBoughtTradables(long)">setBoughtTradables(long)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/game/Player.html#setCurrency(java.lang.String)">setCurrency(String)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
@@ -100,9 +100,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/level/LevelPack.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelPack.html" title="class in de.stock.level">LevelPack</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setDescription(java.lang.String)">setDescription(String)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/event/Event.html#setEnvironmentGroups(java.util.ArrayList)">setEnvironmentGroups(ArrayList&lt;EnvironmentGroup&gt;)</a></span> - Method in class de.stock.event.<a href="../de/stock/event/Event.html" title="class in de.stock.event">Event</a></dt>
 <dd>&nbsp;</dd>
@@ -150,9 +150,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/event/types/MainEvent.html#setInfluenceBottomBound(java.lang.Integer)">setInfluenceBottomBound(Integer)</a></span> - Method in class de.stock.event.types.<a href="../de/stock/event/types/MainEvent.html" title="class in de.stock.event.types">MainEvent</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setInfluenceBottomBound(java.lang.Double)">setInfluenceBottomBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setInfluenceBottomBound(java.lang.Double)">setInfluenceBottomBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setInfluenceBottomBound(java.lang.Double)">setInfluenceBottomBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setInfluenceBottomBound(java.lang.Double)">setInfluenceBottomBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/environment/EnvironmentGroup.html#setInfluenceBottomLimit(java.lang.Double)">setInfluenceBottomLimit(Double)</a></span> - Method in class de.stock.environment.<a href="../de/stock/environment/EnvironmentGroup.html" title="class in de.stock.environment">EnvironmentGroup</a></dt>
 <dd>
@@ -174,21 +174,21 @@
 </dd>
 <dt><span class="strong"><a href="../de/stock/event/types/MainEvent.html#setInfluenceTopBound(java.lang.Integer)">setInfluenceTopBound(Integer)</a></span> - Method in class de.stock.event.types.<a href="../de/stock/event/types/MainEvent.html" title="class in de.stock.event.types">MainEvent</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setInfluenceTopBound(java.lang.Double)">setInfluenceTopBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setInfluenceTopBound(java.lang.Double)">setInfluenceTopBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setInfluenceTopBound(java.lang.Double)">setInfluenceTopBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setInfluenceTopBound(java.lang.Double)">setInfluenceTopBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/environment/EnvironmentGroup.html#setInfluenceTopLimit(java.lang.Double)">setInfluenceTopLimit(Double)</a></span> - Method in class de.stock.environment.<a href="../de/stock/environment/EnvironmentGroup.html" title="class in de.stock.environment">EnvironmentGroup</a></dt>
 <dd>
 <div class="block">Sets the top limit (in percent)</div>
 </dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setInitBottomBound(java.lang.Double)">setInitBottomBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setInitBottomBound(java.lang.Double)">setInitBottomBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setInitBottomBound(java.lang.Double)">setInitBottomBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setInitBottomBound(java.lang.Double)">setInitBottomBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setInitTopBound(java.lang.Double)">setInitTopBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setInitTopBound(java.lang.Double)">setInitTopBound(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setInitTopBound(java.lang.Double)">setInitTopBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setInitTopBound(java.lang.Double)">setInitTopBound(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/level/ILevel.html#setLevelPack(de.stock.level.ILevelPack)">setLevelPack(ILevelPack)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></dt>
 <dd>&nbsp;</dd>
@@ -212,13 +212,13 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/action/ActionObserver.html#setMainEvents(java.util.ArrayList)">setMainEvents(ArrayList&lt;Event&gt;)</a></span> - Method in class de.stock.action.<a href="../de/stock/action/ActionObserver.html" title="class in de.stock.action">ActionObserver</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setMaxShares(java.lang.Integer)">setMaxShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setMaxShares(java.lang.Integer)">setMaxShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setMaxShares(java.lang.Integer)">setMaxShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setMaxShares(java.lang.Integer)">setMaxShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setMinShares(java.lang.Integer)">setMinShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setMinShares(java.lang.Integer)">setMinShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setMinShares(java.lang.Integer)">setMinShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setMinShares(java.lang.Integer)">setMinShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/game/Player.html#setMoney(long)">setMoney(long)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
@@ -236,9 +236,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/level/LevelPack.html#setName(java.lang.String)">setName(String)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelPack.html" title="class in de.stock.level">LevelPack</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setName(java.lang.String)">setName(String)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setName(java.lang.String)">setName(String)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setName(java.lang.String)">setName(String)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setName(java.lang.String)">setName(String)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/level/ILevelPack.html#setNation(java.lang.String)">setNation(String)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevelPack.html" title="interface in de.stock.level">ILevelPack</a></dt>
 <dd>&nbsp;</dd>
@@ -246,9 +246,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/game/Player.html#setNationality(java.lang.String)">setNationality(String)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setPartOf(java.util.HashSet)">setPartOf(HashSet&lt;IEnvironment&gt;)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setPartOf(java.util.HashSet)">setPartOf(HashSet&lt;IEnvironment&gt;)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setPartOf(java.util.HashSet)">setPartOf(HashSet&lt;IEnvironment&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setPartOf(java.util.HashSet)">setPartOf(HashSet&lt;IEnvironment&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/event/Event.html#setPriority(de.stock.utils.Priority)">setPriority(Priority)</a></span> - Method in class de.stock.event.<a href="../de/stock/event/Event.html" title="class in de.stock.event">Event</a></dt>
 <dd>&nbsp;</dd>
@@ -256,9 +256,9 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/event/Event.html#setRoundsTopBound(java.lang.Integer)">setRoundsTopBound(Integer)</a></span> - Method in class de.stock.event.<a href="../de/stock/event/Event.html" title="class in de.stock.event">Event</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setShares(java.lang.Integer)">setShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setShares(java.lang.Integer)">setShares(Integer)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setShares(java.lang.Integer)">setShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setShares(java.lang.Integer)">setShares(Integer)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/environment/EnvironmentGroup.html#setSign(boolean)">setSign(boolean)</a></span> - Method in class de.stock.environment.<a href="../de/stock/environment/EnvironmentGroup.html" title="class in de.stock.environment">EnvironmentGroup</a></dt>
 <dd>
@@ -274,7 +274,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="strong"><a href="../de/stock/game/Player.html#setSurname(java.lang.String)">setSurname(String)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/TradeableHandler.html#setTempTradeables(java.util.HashMap)">setTempTradeables(HashMap&lt;ITradeable, Double&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/TradableHandler.html#setTempTradables(java.util.HashMap)">setTempTradables(HashMap&lt;ITradable, Double&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="../de/stock/settings/Settings_Deserializer.html" title="class in de.stock.settings"><span class="strong">Settings_Deserializer</span></a> - Class in <a href="../de/stock/settings/package-summary.html">de.stock.settings</a></dt>
 <dd>
@@ -319,34 +319,34 @@
 </dd>
 <dt><span class="strong"><a href="../de/stock/settings/Settings_Output.html#Settings_Output()">Settings_Output()</a></span> - Constructor for class de.stock.settings.<a href="../de/stock/settings/Settings_Output.html" title="class in de.stock.settings">Settings_Output</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="../de/stock/settings/Settings_Tradeable.html" title="class in de.stock.settings"><span class="strong">Settings_Tradeable</span></a> - Class in <a href="../de/stock/settings/package-summary.html">de.stock.settings</a></dt>
+<dt><a href="../de/stock/settings/Settings_Tradable.html" title="class in de.stock.settings"><span class="strong">Settings_Tradable</span></a> - Class in <a href="../de/stock/settings/package-summary.html">de.stock.settings</a></dt>
 <dd>
-<div class="block">Provides settings for the <a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeable</code></a>
+<div class="block">Provides settings for the <a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeable</code></a>
  system</div>
 </dd>
-<dt><span class="strong"><a href="../de/stock/settings/Settings_Tradeable.html#Settings_Tradeable()">Settings_Tradeable()</a></span> - Constructor for class de.stock.settings.<a href="../de/stock/settings/Settings_Tradeable.html" title="class in de.stock.settings">Settings_Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/settings/Settings_Tradable.html#Settings_Tradable()">Settings_Tradable()</a></span> - Constructor for class de.stock.settings.<a href="../de/stock/settings/Settings_Tradable.html" title="class in de.stock.settings">Settings_Tradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/game/Player.html#setTradeableMap(java.util.HashMap)">setTradeableMap(HashMap&lt;ITradeable, Long&gt;)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
+<dt><span class="strong"><a href="../de/stock/game/Player.html#setTradableMap(java.util.HashMap)">setTradableMap(HashMap&lt;ITradable, Long&gt;)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/game/Player.html#setTradeables(java.util.HashMap)">setTradeables(HashMap&lt;ITradeable, Long&gt;)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
+<dt><span class="strong"><a href="../de/stock/game/Player.html#setTradables(java.util.HashMap)">setTradables(HashMap&lt;ITradable, Long&gt;)</a></span> - Method in class de.stock.game.<a href="../de/stock/game/Player.html" title="class in de.stock.game">Player</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/level/ILevel.html#setTradeables(java.util.ArrayList)">setTradeables(ArrayList&lt;ITradeable&gt;)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></dt>
+<dt><span class="strong"><a href="../de/stock/level/ILevel.html#setTradables(java.util.ArrayList)">setTradables(ArrayList&lt;ITradable&gt;)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevel.html" title="interface in de.stock.level">ILevel</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/level/ILevelPack.html#setTradeables(java.util.ArrayList)">setTradeables(ArrayList&lt;ITradeable&gt;)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevelPack.html" title="interface in de.stock.level">ILevelPack</a></dt>
+<dt><span class="strong"><a href="../de/stock/level/ILevelPack.html#setTradables(java.util.ArrayList)">setTradables(ArrayList&lt;ITradable&gt;)</a></span> - Method in interface de.stock.level.<a href="../de/stock/level/ILevelPack.html" title="interface in de.stock.level">ILevelPack</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/level/Level.html#setTradeables(java.util.ArrayList)">setTradeables(ArrayList&lt;ITradeable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/Level.html" title="class in de.stock.level">Level</a></dt>
+<dt><span class="strong"><a href="../de/stock/level/Level.html#setTradables(java.util.ArrayList)">setTradables(ArrayList&lt;ITradable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/Level.html" title="class in de.stock.level">Level</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/level/LevelDecorator.html#setTradeables(java.util.ArrayList)">setTradeables(ArrayList&lt;ITradeable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelDecorator.html" title="class in de.stock.level">LevelDecorator</a></dt>
+<dt><span class="strong"><a href="../de/stock/level/LevelDecorator.html#setTradables(java.util.ArrayList)">setTradables(ArrayList&lt;ITradable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelDecorator.html" title="class in de.stock.level">LevelDecorator</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/level/LevelPack.html#setTradeables(java.util.ArrayList)">setTradeables(ArrayList&lt;ITradeable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelPack.html" title="class in de.stock.level">LevelPack</a></dt>
+<dt><span class="strong"><a href="../de/stock/level/LevelPack.html#setTradables(java.util.ArrayList)">setTradables(ArrayList&lt;ITradable&gt;)</a></span> - Method in class de.stock.level.<a href="../de/stock/level/LevelPack.html" title="class in de.stock.level">LevelPack</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/TradeableHandler.html#setTradeables(java.util.HashSet)">setTradeables(HashSet&lt;ITradeable&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable">TradeableHandler</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/TradableHandler.html#setTradables(java.util.HashSet)">setTradables(HashSet&lt;ITradable&gt;)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable">TradableHandler</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/ITradeable.html#setValue(java.lang.Double)">setValue(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/ITradable.html#setValue(java.lang.Double)">setValue(Double)</a></span> - Method in interface de.stock.tradeable.<a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#setValue(java.lang.Double)">setValue(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#setValue(java.lang.Double)">setValue(Double)</a></span> - Method in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="strong"><a href="../de/stock/tradeable/Tradeable.html#shares">shares</a></span> - Variable in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable">Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/tradeable/Tradable.html#shares">shares</a></span> - Variable in class de.stock.tradeable.<a href="../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable">Tradable</a></dt>
 <dd>
 <div class="block">Available number of shares of this tradeable</div>
 </dd>
@@ -365,16 +365,16 @@
  Random between 0 and 100 and if value is <= SIGN_NEGATIVE_BOUND sign is
  negative</div>
 </dd>
-<dt><span class="strong"><a href="../de/stock/settings/Settings_Tradeable.html#SIGN_NEGATIVE_BOUND">SIGN_NEGATIVE_BOUND</a></span> - Static variable in class de.stock.settings.<a href="../de/stock/settings/Settings_Tradeable.html" title="class in de.stock.settings">Settings_Tradeable</a></dt>
+<dt><span class="strong"><a href="../de/stock/settings/Settings_Tradable.html#SIGN_NEGATIVE_BOUND">SIGN_NEGATIVE_BOUND</a></span> - Static variable in class de.stock.settings.<a href="../de/stock/settings/Settings_Tradable.html" title="class in de.stock.settings">Settings_Tradable</a></dt>
 <dd>
-<div class="block">Used in <a href="../de/stock/tradeable/Tradeable.html#updateValue()"><code>Tradeable.updateValue()</code></a> to check whether sign is positive or negative<br>
+<div class="block">Used in <a href="../de/stock/tradeable/Tradable.html#updateValue()"><code>Tradable.updateValue()</code></a> to check whether sign is positive or negative<br>
  <br>
  Random between 0 and 100 and if value is less or equal than
  SIGN_NEGATIVE_BOUND sign is negative</div>
 </dd>
 <dt><a href="../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><span class="strong">Stock</span></a> - Class in <a href="../de/stock/tradeable/package-summary.html">de.stock.tradeable</a></dt>
 <dd>
-<div class="block">See <a href="../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>ITradeable</code></a> for further information
+<div class="block">See <a href="../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>ITradable</code></a> for further information
  on tradeables</div>
 </dd>
 <dt><span class="strong"><a href="../de/stock/tradeable/Stock.html#Stock()">Stock()</a></span> - Constructor for class de.stock.tradeable.<a href="../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable">Stock</a></dt>

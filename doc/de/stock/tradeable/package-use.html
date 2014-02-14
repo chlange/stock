@@ -108,11 +108,11 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradeable.html#de.stock.environment">ITradeable</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradable.html#de.stock.environment">ITradable</a>
 <div class="block">Interface for tradeables<br>
  <br>
- Tradeables, which are stored in the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>, consist of
+ Tradables, which are stored in the
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>, consist of
  several parts:<br>
  <br>
  - The <b>value</b></b><br>
@@ -120,18 +120,18 @@
  &nbsp;&nbsp;The value gets influenced by <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>
  respectively <a href="../../../de/stock/environment/Environment.html" title="class in de.stock.environment"><code>environments</code></a>.<br>
  &nbsp;&nbsp;If a tradeable wasn't influenced by an event the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>
- <a href="../../../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>updates</code></a> the value manually<br>
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>
+ <a href="../../../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>updates</code></a> the value manually<br>
  &nbsp;&nbsp;using a random value in between the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
  round.<br>
  <br>
  - The <b>shares</b></b><br>
  &nbsp;&nbsp;Every tradeable has a number of minimum and maximum available
  shares.<br>
  &nbsp;&nbsp;The number of shares is initialized with
- <a href="../../../de/stock/tradeable/ITradeable.html#initializeShares()"><code>ITradeable.initializeShares()</code></a><br>
+ <a href="../../../de/stock/tradeable/ITradable.html#initializeShares()"><code>ITradable.initializeShares()</code></a><br>
  &nbsp;&nbsp;This number varies if the player buys or sells a tradeable.<br>
  &nbsp;&nbsp;(It should change randomly without the players influence, too)<br>
  <br>
@@ -144,7 +144,7 @@
  A tradeable is from type <a href="../../../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><code>Stock</code></a>,
  <a href="../../../de/stock/tradeable/Commodity.html" title="class in de.stock.tradeable"><code>Commodity</code></a>,
  <a href="../../../de/stock/tradeable/Forex.html" title="class in de.stock.tradeable"><code>Forex</code></a> or <a href="../../../de/stock/tradeable/Derivate.html" title="class in de.stock.tradeable"><code>Derivate</code></a> and a developer <b>must</b> instantiate from these classes.<br>
- He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>Tradeable</code></a> class!<br>
+ He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>Tradable</code></a> class!<br>
  <br>
  Its the key element to earn money in this game.<br></div>
 </td>
@@ -162,11 +162,11 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradeable.html#de.stock.game">ITradeable</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradable.html#de.stock.game">ITradable</a>
 <div class="block">Interface for tradeables<br>
  <br>
- Tradeables, which are stored in the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>, consist of
+ Tradables, which are stored in the
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>, consist of
  several parts:<br>
  <br>
  - The <b>value</b></b><br>
@@ -174,18 +174,18 @@
  &nbsp;&nbsp;The value gets influenced by <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>
  respectively <a href="../../../de/stock/environment/Environment.html" title="class in de.stock.environment"><code>environments</code></a>.<br>
  &nbsp;&nbsp;If a tradeable wasn't influenced by an event the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>
- <a href="../../../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>updates</code></a> the value manually<br>
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>
+ <a href="../../../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>updates</code></a> the value manually<br>
  &nbsp;&nbsp;using a random value in between the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
  round.<br>
  <br>
  - The <b>shares</b></b><br>
  &nbsp;&nbsp;Every tradeable has a number of minimum and maximum available
  shares.<br>
  &nbsp;&nbsp;The number of shares is initialized with
- <a href="../../../de/stock/tradeable/ITradeable.html#initializeShares()"><code>ITradeable.initializeShares()</code></a><br>
+ <a href="../../../de/stock/tradeable/ITradable.html#initializeShares()"><code>ITradable.initializeShares()</code></a><br>
  &nbsp;&nbsp;This number varies if the player buys or sells a tradeable.<br>
  &nbsp;&nbsp;(It should change randomly without the players influence, too)<br>
  <br>
@@ -198,7 +198,7 @@
  A tradeable is from type <a href="../../../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><code>Stock</code></a>,
  <a href="../../../de/stock/tradeable/Commodity.html" title="class in de.stock.tradeable"><code>Commodity</code></a>,
  <a href="../../../de/stock/tradeable/Forex.html" title="class in de.stock.tradeable"><code>Forex</code></a> or <a href="../../../de/stock/tradeable/Derivate.html" title="class in de.stock.tradeable"><code>Derivate</code></a> and a developer <b>must</b> instantiate from these classes.<br>
- He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>Tradeable</code></a> class!<br>
+ He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>Tradable</code></a> class!<br>
  <br>
  Its the key element to earn money in this game.<br></div>
 </td>
@@ -216,11 +216,11 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradeable.html#de.stock.level">ITradeable</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradable.html#de.stock.level">ITradable</a>
 <div class="block">Interface for tradeables<br>
  <br>
- Tradeables, which are stored in the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>, consist of
+ Tradables, which are stored in the
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>, consist of
  several parts:<br>
  <br>
  - The <b>value</b></b><br>
@@ -228,18 +228,18 @@
  &nbsp;&nbsp;The value gets influenced by <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>
  respectively <a href="../../../de/stock/environment/Environment.html" title="class in de.stock.environment"><code>environments</code></a>.<br>
  &nbsp;&nbsp;If a tradeable wasn't influenced by an event the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>
- <a href="../../../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>updates</code></a> the value manually<br>
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>
+ <a href="../../../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>updates</code></a> the value manually<br>
  &nbsp;&nbsp;using a random value in between the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
  round.<br>
  <br>
  - The <b>shares</b></b><br>
  &nbsp;&nbsp;Every tradeable has a number of minimum and maximum available
  shares.<br>
  &nbsp;&nbsp;The number of shares is initialized with
- <a href="../../../de/stock/tradeable/ITradeable.html#initializeShares()"><code>ITradeable.initializeShares()</code></a><br>
+ <a href="../../../de/stock/tradeable/ITradable.html#initializeShares()"><code>ITradable.initializeShares()</code></a><br>
  &nbsp;&nbsp;This number varies if the player buys or sells a tradeable.<br>
  &nbsp;&nbsp;(It should change randomly without the players influence, too)<br>
  <br>
@@ -252,7 +252,7 @@
  A tradeable is from type <a href="../../../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><code>Stock</code></a>,
  <a href="../../../de/stock/tradeable/Commodity.html" title="class in de.stock.tradeable"><code>Commodity</code></a>,
  <a href="../../../de/stock/tradeable/Forex.html" title="class in de.stock.tradeable"><code>Forex</code></a> or <a href="../../../de/stock/tradeable/Derivate.html" title="class in de.stock.tradeable"><code>Derivate</code></a> and a developer <b>must</b> instantiate from these classes.<br>
- He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>Tradeable</code></a> class!<br>
+ He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>Tradable</code></a> class!<br>
  <br>
  Its the key element to earn money in this game.<br></div>
 </td>
@@ -270,11 +270,11 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradeable.html#de.stock.tradeable">ITradeable</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradable.html#de.stock.tradeable">ITradable</a>
 <div class="block">Interface for tradeables<br>
  <br>
- Tradeables, which are stored in the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>, consist of
+ Tradables, which are stored in the
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>, consist of
  several parts:<br>
  <br>
  - The <b>value</b></b><br>
@@ -282,18 +282,18 @@
  &nbsp;&nbsp;The value gets influenced by <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>
  respectively <a href="../../../de/stock/environment/Environment.html" title="class in de.stock.environment"><code>environments</code></a>.<br>
  &nbsp;&nbsp;If a tradeable wasn't influenced by an event the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>
- <a href="../../../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>updates</code></a> the value manually<br>
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>
+ <a href="../../../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>updates</code></a> the value manually<br>
  &nbsp;&nbsp;using a random value in between the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
  round.<br>
  <br>
  - The <b>shares</b></b><br>
  &nbsp;&nbsp;Every tradeable has a number of minimum and maximum available
  shares.<br>
  &nbsp;&nbsp;The number of shares is initialized with
- <a href="../../../de/stock/tradeable/ITradeable.html#initializeShares()"><code>ITradeable.initializeShares()</code></a><br>
+ <a href="../../../de/stock/tradeable/ITradable.html#initializeShares()"><code>ITradable.initializeShares()</code></a><br>
  &nbsp;&nbsp;This number varies if the player buys or sells a tradeable.<br>
  &nbsp;&nbsp;(It should change randomly without the players influence, too)<br>
  <br>
@@ -306,21 +306,21 @@
  A tradeable is from type <a href="../../../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><code>Stock</code></a>,
  <a href="../../../de/stock/tradeable/Commodity.html" title="class in de.stock.tradeable"><code>Commodity</code></a>,
  <a href="../../../de/stock/tradeable/Forex.html" title="class in de.stock.tradeable"><code>Forex</code></a> or <a href="../../../de/stock/tradeable/Derivate.html" title="class in de.stock.tradeable"><code>Derivate</code></a> and a developer <b>must</b> instantiate from these classes.<br>
- He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>Tradeable</code></a> class!<br>
+ He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>Tradable</code></a> class!<br>
  <br>
  Its the key element to earn money in this game.<br></div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/Tradeable.html#de.stock.tradeable">Tradeable</a>
-<div class="block">See <a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable"><code>ITradeable</code></a> for further information</div>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/Tradable.html#de.stock.tradeable">Tradable</a>
+<div class="block">See <a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable"><code>ITradable</code></a> for further information</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/TradeableHandler.html#de.stock.tradeable">TradeableHandler</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/TradableHandler.html#de.stock.tradeable">TradableHandler</a>
 <div class="block">The tradeable handler stores all registered
- <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a>, keeps track of the active
- (currently played) <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and
+ <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a>, keeps track of the active
+ (currently played) <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and
  updates them if they weren't influenced by an <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>Event</code></a></div>
 </td>
 </tr>
@@ -337,11 +337,11 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradeable.html#de.stock.utils">ITradeable</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/ITradable.html#de.stock.utils">ITradable</a>
 <div class="block">Interface for tradeables<br>
  <br>
- Tradeables, which are stored in the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>, consist of
+ Tradables, which are stored in the
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>, consist of
  several parts:<br>
  <br>
  - The <b>value</b></b><br>
@@ -349,18 +349,18 @@
  &nbsp;&nbsp;The value gets influenced by <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>events</code></a>
  respectively <a href="../../../de/stock/environment/Environment.html" title="class in de.stock.environment"><code>environments</code></a>.<br>
  &nbsp;&nbsp;If a tradeable wasn't influenced by an event the
- <a href="../../../de/stock/tradeable/TradeableHandler.html" title="class in de.stock.tradeable"><code>TradeableHandler</code></a>
- <a href="../../../de/stock/tradeable/TradeableHandler.html#updateUnchangedTradeables()"><code>updates</code></a> the value manually<br>
+ <a href="../../../de/stock/tradeable/TradableHandler.html" title="class in de.stock.tradeable"><code>TradableHandler</code></a>
+ <a href="../../../de/stock/tradeable/TradableHandler.html#updateUnchangedTradables()"><code>updates</code></a> the value manually<br>
  &nbsp;&nbsp;using a random value in between the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
- <a href="../../../de/stock/tradeable/ITradeable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceBottomBound()"><code>influencable bottom bound</code></a> and the
+ <a href="../../../de/stock/tradeable/ITradable.html#getInfluenceTopBound()"><code>influencable top bound</code></a> of the tradeable every
  round.<br>
  <br>
  - The <b>shares</b></b><br>
  &nbsp;&nbsp;Every tradeable has a number of minimum and maximum available
  shares.<br>
  &nbsp;&nbsp;The number of shares is initialized with
- <a href="../../../de/stock/tradeable/ITradeable.html#initializeShares()"><code>ITradeable.initializeShares()</code></a><br>
+ <a href="../../../de/stock/tradeable/ITradable.html#initializeShares()"><code>ITradable.initializeShares()</code></a><br>
  &nbsp;&nbsp;This number varies if the player buys or sells a tradeable.<br>
  &nbsp;&nbsp;(It should change randomly without the players influence, too)<br>
  <br>
@@ -373,16 +373,16 @@
  A tradeable is from type <a href="../../../de/stock/tradeable/Stock.html" title="class in de.stock.tradeable"><code>Stock</code></a>,
  <a href="../../../de/stock/tradeable/Commodity.html" title="class in de.stock.tradeable"><code>Commodity</code></a>,
  <a href="../../../de/stock/tradeable/Forex.html" title="class in de.stock.tradeable"><code>Forex</code></a> or <a href="../../../de/stock/tradeable/Derivate.html" title="class in de.stock.tradeable"><code>Derivate</code></a> and a developer <b>must</b> instantiate from these classes.<br>
- He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>Tradeable</code></a> class!<br>
+ He <b>must not</b> instantiate the <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>Tradable</code></a> class!<br>
  <br>
  Its the key element to earn money in this game.<br></div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colOne"><a href="../../../de/stock/tradeable/class-use/TradeableHandler.html#de.stock.utils">TradeableHandler</a>
+<td class="colOne"><a href="../../../de/stock/tradeable/class-use/TradableHandler.html#de.stock.utils">TradableHandler</a>
 <div class="block">The tradeable handler stores all registered
- <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a>, keeps track of the active
- (currently played) <a href="../../../de/stock/tradeable/Tradeable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and
+ <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a>, keeps track of the active
+ (currently played) <a href="../../../de/stock/tradeable/Tradable.html" title="class in de.stock.tradeable"><code>tradeables</code></a> and
  updates them if they weren't influenced by an <a href="../../../de/stock/event/Event.html" title="class in de.stock.event"><code>Event</code></a></div>
 </td>
 </tr>

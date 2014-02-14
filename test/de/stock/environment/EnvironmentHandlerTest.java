@@ -125,7 +125,7 @@ public class EnvironmentHandlerTest {
         TradableHandler.getInstance().getActiveTradables().put(bond, 1.0);
         TradableHandler.getInstance().getActiveTradables().put(forex, 200.0);
 
-        // Affect no tradable as these are not intersecting tradeables
+        // Affect no tradable as these are not intersecting tradables
         environmentGroup.registerEnvironment(group);
         EnvironmentHandler.getInstance().influenceEnvironments(environmentGroupArray);
         assertEquals(new Double(100.0),

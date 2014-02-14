@@ -21,10 +21,10 @@ import de.stock.tradable.ITradable;
  * A level pack - a packet of several {@link de.stock.level.ILevel
  * levels} - which has a name and a description.<br>
  * <br>
- * It may has tradeables which are available and events which can occur over the
+ * It may has tradables which are available and events which can occur over the
  * whole playtime of the level pack.<br>
  * (Every level in a level pack may have specific
- * {@link de.stock.tradable.Tradable tradeables} or
+ * {@link de.stock.tradable.Tradable tradables} or
  * {@link de.stock.event.Event events}, too!)<br>
  * <br>
  * The player can choose from these packs at the beginning of the game and if a
@@ -34,7 +34,7 @@ import de.stock.tradable.ITradable;
  * levels:<br>
  * <br>
  * &nbsp;&nbsp;<u>1. Level:</u> Lemonade stand <br>
- * &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  * specific<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
@@ -43,7 +43,7 @@ import de.stock.tradable.ITradable;
  * prices raise</i> <br>
  * <br>
  * &nbsp;&nbsp;<u>2. Level:</u> Lemonade factory<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  * specific and 2. level specific <i>Limes and Saccharin</i><br>
  * &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
@@ -53,12 +53,12 @@ import de.stock.tradable.ITradable;
  * you 15000$</i><br>
  * <br>
  * &nbsp;&nbsp;<u>3. Level:</u> Lemonade concern<br>
- * &nbsp;&nbsp;&nbsp;&nbsp;Tradeables:<br>
+ * &nbsp;&nbsp;&nbsp;&nbsp;Tradables:<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;- <i>Lemons and Sugar</i> which are both level pack
  * specific and 3. level specific <i>Limes, Oranges, Saccharin and Thaumatin</i><br>
  * &nbsp;&nbsp;&nbsp;&nbsp;Events:<br>
  * &nbsp;&nbsp;&nbsp;&nbsp;- <i>Citrus fruit plague -> All citrus fruit
- * tradeables drop for at least 3 rounds by 10%</i><br>
+ * tradables drop for at least 3 rounds by 10%</i><br>
  * 
  * <br>
  * These level packs are loaded through the

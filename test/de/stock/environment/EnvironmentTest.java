@@ -63,7 +63,7 @@ public class EnvironmentTest {
     }
 
     @Test
-    public void testGetAffectedTradeables() {
+    public void testGetAffectedTradables() {
 
         HashSet<ITradable> affectedTradables;
 
@@ -78,7 +78,7 @@ public class EnvironmentTest {
         // Reset
         linkedLocation = new Location();
 
-        // Check with two linear linked environments and two tradeables
+        // Check with two linear linked environments and two tradables
         linkedArea.registerTradable(bond);
         linkedLocation.registerTradable(stock);
         assertTrue(area.linkEnvironment(linkedArea));
@@ -94,7 +94,7 @@ public class EnvironmentTest {
         linkedArea = new Area();
         linkedLocation = new Location();
 
-        // Check with two linear linked environments and two tradeables but both
+        // Check with two linear linked environments and two tradables but both
         // the same
         linkedArea.registerTradable(bond);
         linkedLocation.registerTradable(bond);
@@ -110,7 +110,7 @@ public class EnvironmentTest {
         linkedArea = new Area();
         linkedLocation = new Location();
 
-        // Check with two rooted linked environments and two tradeables
+        // Check with two rooted linked environments and two tradables
         linkedArea.registerTradable(bond);
         linkedLocation.registerTradable(stock);
         assertTrue(area.linkEnvironment(linkedArea));
@@ -127,7 +127,7 @@ public class EnvironmentTest {
         linkedArea = new Area();
         linkedLocation = new Location();
 
-        // Check with two rooted linked environments and three tradeables but
+        // Check with two rooted linked environments and three tradables but
         // two the same
         linkedArea.registerTradable(bond);
         linkedLocation.registerTradable(bond);
@@ -208,7 +208,7 @@ public class EnvironmentTest {
     }
 
     @Test
-    public void testRegisterTradeable() {
+    public void testRegisterTradable() {
 
         // Test without registered tradable
         assertTrue(location.getInfluencedTradables().size() == 0);

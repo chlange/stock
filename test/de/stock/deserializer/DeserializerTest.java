@@ -41,7 +41,7 @@ public class DeserializerTest {
 
     private File           event;
     private File           environment;
-    private File           tradeable;
+    private File           tradable;
     private File           nevermindFile;
     private File           nevermindFolder;
     private File           fileInNevermindFolder;
@@ -50,7 +50,7 @@ public class DeserializerTest {
     public void setUp() throws Exception {
         event = folder.newFile("Event.evt");
         environment = folder.newFile("Environment.env");
-        tradeable = folder.newFile("Tradable.trd");
+        tradable = folder.newFile("Tradable.trd");
         nevermindFile = folder.newFile("NVM");
         nevermindFolder = folder.newFolder("nevermindFolder");
         fileInNevermindFolder = folder.newFile("nevermindFolder/file.test");
@@ -116,7 +116,7 @@ public class DeserializerTest {
                 .getRoot()));
         assertTrue(files.contains(event));
         assertTrue(files.contains(environment));
-        assertTrue(files.contains(tradeable));
+        assertTrue(files.contains(tradable));
         assertTrue(files.contains(nevermindFile));
         assertFalse(files.contains(nevermindFolder));
         assertTrue(files.contains(fileInNevermindFolder));
@@ -245,12 +245,12 @@ public class DeserializerTest {
             out = new BufferedWriter(new FileWriter(environment));
             out.write("Success");
             out.close();
-            out = new BufferedWriter(new FileWriter(tradeable));
+            out = new BufferedWriter(new FileWriter(tradable));
             out.write("Success");
             out.close();
             assertEquals("Success", Deserializer.readFile(event));
             assertEquals("Success", Deserializer.readFile(environment));
-            assertEquals("Success", Deserializer.readFile(tradeable));
+            assertEquals("Success", Deserializer.readFile(tradable));
         }
         catch (final IOException e) {
             // BLABLA

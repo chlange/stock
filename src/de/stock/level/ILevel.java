@@ -32,8 +32,8 @@ import de.stock.tradable.ITradable;
  * stopped if running</i>) from event observer if a level is passed and added if
  * it gets started<br>
  * <br>
- * - The <b>tradeables</b><br>
- * &nbsp;&nbsp;A level may have specific tradeables, which are removed from
+ * - The <b>tradables</b><br>
+ * &nbsp;&nbsp;A level may have specific tradables, which are removed from
  * tradable handler if a level is passed and added if it gets started<br>
  * <br>
  * - The <b>goal</b><br>

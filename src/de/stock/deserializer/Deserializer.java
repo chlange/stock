@@ -21,7 +21,7 @@ import flexjson.JSONSerializer;
 /**
  * The parser loads nearly all the content of the game.<br>
  * <br>
- * All environments, events, tradeables, ... are serialized in json-formatted
+ * All environments, events, tradables, ... are serialized in json-formatted
  * strings <br>
  * and saved in files, so content can be injected very fast and clean.<br>
  * You can find the file extensions in
@@ -42,7 +42,7 @@ public final class Deserializer {
     /**
      * Deserializes all files regarding to {@code type}<br>
      * <br>
-     * - Tradeables are saved in
+     * - Tradables are saved in
      * {@link de.stock.tradable.TradableHandler#getTradables()
      * TradableHandler}<br>
      * - Events are saved in

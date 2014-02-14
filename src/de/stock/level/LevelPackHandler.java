@@ -52,7 +52,7 @@ public class LevelPackHandler {
      * If this method gets called the player can choose a level pack from the
      * {@code levelStage}<br>
      * <br>
-     * The level pack specific content (events, tradeables, ...) gets
+     * The level pack specific content (events, tradables, ...) gets
      * registered, too. <br>
      * (See {@link de.stock.settings.Settings_Level Settings_Level} for level
      * stage information)
@@ -276,7 +276,7 @@ public class LevelPackHandler {
     }
 
     /**
-     * Register level pack specifc content (events and tradeables)
+     * Register level pack specifc content (events and tradables)
      * 
      * @param levelPack
      *            the level pack to get the content from
@@ -290,7 +290,7 @@ public class LevelPackHandler {
         }
 
         if (levelPack.getTradables() != null) {
-            // Register level pack specific tradeables to active tradeables
+            // Register level pack specific tradables to active tradables
             for (final ITradable tradable : levelPack.getTradables()) {
                 TradableHandler.getInstance().registerActiveTradable(tradable);
             }

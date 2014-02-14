@@ -186,7 +186,7 @@ import net.xeoh.plugins.base.util.PluginManagerUtil;
  *   // Add event to level
  *   myLevel.registerEvent(myEvent);
  *   // Add tradable to level
- *   myLevel.registerTradeable(lemons);
+ *   myLevel.registerTradable(lemons);
  *   // Add level to level pack
  *   addFirstLevel(myLevel);
  * }

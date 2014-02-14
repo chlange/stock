@@ -121,7 +121,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>private long</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#boughtTradeables">boughtTradeables</a></strong></code>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#boughtTradables">boughtTradables</a></strong></code>
 <div class="block">Overall number of bought tradeables</div>
 </td>
 </tr>
@@ -156,7 +156,7 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#surname">surname</a></strong></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>private java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;</code></td>
+<td class="colFirst"><code>private java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;</code></td>
 <td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#tradeables">tradeables</a></strong></code>
 <div class="block">All player owned tradeables with the amount</div>
 </td>
@@ -213,7 +213,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#decBoughtTradeables(long)">decBoughtTradeables</a></strong>(long&nbsp;value)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#decBoughtTradables(long)">decBoughtTradables</a></strong>(long&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
@@ -221,7 +221,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>long</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getBoughtTradeables()">getBoughtTradeables</a></strong>()</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getBoughtTradables()">getBoughtTradables</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -248,16 +248,16 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getSurname()">getSurname</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>java.util.Map&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getTradeableMap()">getTradeableMap</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.Map&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getTradableMap()">getTradableMap</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getTradeables()">getTradeables</a></strong>()</code>&nbsp;</td>
+<td class="colFirst"><code>java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;</code></td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#getTradables()">getTradables</a></strong>()</code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#incBoughtTradeables(long)">incBoughtTradeables</a></strong>(long&nbsp;value)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#incBoughtTradables(long)">incBoughtTradables</a></strong>(long&nbsp;value)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -265,7 +265,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setBoughtTradeables(long)">setBoughtTradeables</a></strong>(long&nbsp;boughtTradeables)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setBoughtTradables(long)">setBoughtTradables</a></strong>(long&nbsp;boughtTradables)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -289,11 +289,11 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setTradeableMap(java.util.HashMap)">setTradeableMap</a></strong>(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;tradeableMap)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setTradableMap(java.util.HashMap)">setTradableMap</a></strong>(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;tradeableMap)</code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setTradeables(java.util.HashMap)">setTradeables</a></strong>(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;tradeables)</code>&nbsp;</td>
+<td class="colLast"><code><strong><a href="../../../de/stock/game/Player.html#setTradables(java.util.HashMap)">setTradables</a></strong>(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;tradeables)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -354,13 +354,13 @@ extends java.lang.Object</pre>
 <div class="block">Money of the player</div>
 </li>
 </ul>
-<a name="boughtTradeables">
+<a name="boughtTradables">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>boughtTradeables</h4>
-<pre>private&nbsp;long boughtTradeables</pre>
+<h4>boughtTradables</h4>
+<pre>private&nbsp;long boughtTradables</pre>
 <div class="block">Overall number of bought tradeables</div>
 </li>
 </ul>
@@ -390,7 +390,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>tradeables</h4>
-<pre>private&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt; tradeables</pre>
+<pre>private&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt; tradeables</pre>
 <div class="block">All player owned tradeables with the amount</div>
 </li>
 </ul>
@@ -464,13 +464,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;chooseSurname()</pre>
 </li>
 </ul>
-<a name="decBoughtTradeables(long)">
+<a name="decBoughtTradables(long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>decBoughtTradeables</h4>
-<pre>public&nbsp;void&nbsp;decBoughtTradeables(long&nbsp;value)</pre>
+<h4>decBoughtTradables</h4>
+<pre>public&nbsp;void&nbsp;decBoughtTradables(long&nbsp;value)</pre>
 </li>
 </ul>
 <a name="decMoney(long)">
@@ -482,13 +482,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;decMoney(long&nbsp;money)</pre>
 </li>
 </ul>
-<a name="getBoughtTradeables()">
+<a name="getBoughtTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getBoughtTradeables</h4>
-<pre>public&nbsp;long&nbsp;getBoughtTradeables()</pre>
+<h4>getBoughtTradables</h4>
+<pre>public&nbsp;long&nbsp;getBoughtTradables()</pre>
 </li>
 </ul>
 <a name="getCurrency()">
@@ -536,31 +536,31 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;java.lang.String&nbsp;getSurname()</pre>
 </li>
 </ul>
-<a name="getTradeableMap()">
+<a name="getTradableMap()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTradeableMap</h4>
-<pre>public&nbsp;java.util.Map&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;getTradeableMap()</pre>
+<h4>getTradableMap</h4>
+<pre>public&nbsp;java.util.Map&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;getTradableMap()</pre>
 </li>
 </ul>
-<a name="getTradeables()">
+<a name="getTradables()">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTradeables</h4>
-<pre>public&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;getTradeables()</pre>
+<h4>getTradables</h4>
+<pre>public&nbsp;java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;getTradables()</pre>
 </li>
 </ul>
-<a name="incBoughtTradeables(long)">
+<a name="incBoughtTradables(long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>incBoughtTradeables</h4>
-<pre>public&nbsp;void&nbsp;incBoughtTradeables(long&nbsp;value)</pre>
+<h4>incBoughtTradables</h4>
+<pre>public&nbsp;void&nbsp;incBoughtTradables(long&nbsp;value)</pre>
 </li>
 </ul>
 <a name="incMoney(long)">
@@ -572,13 +572,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;incMoney(long&nbsp;money)</pre>
 </li>
 </ul>
-<a name="setBoughtTradeables(long)">
+<a name="setBoughtTradables(long)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setBoughtTradeables</h4>
-<pre>public&nbsp;void&nbsp;setBoughtTradeables(long&nbsp;boughtTradeables)</pre>
+<h4>setBoughtTradables</h4>
+<pre>public&nbsp;void&nbsp;setBoughtTradables(long&nbsp;boughtTradables)</pre>
 </li>
 </ul>
 <a name="setCurrency(java.lang.String)">
@@ -626,22 +626,22 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;setSurname(java.lang.String&nbsp;surname)</pre>
 </li>
 </ul>
-<a name="setTradeableMap(java.util.HashMap)">
+<a name="setTradableMap(java.util.HashMap)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setTradeableMap</h4>
-<pre>public&nbsp;void&nbsp;setTradeableMap(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;tradeableMap)</pre>
+<h4>setTradableMap</h4>
+<pre>public&nbsp;void&nbsp;setTradableMap(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;tradeableMap)</pre>
 </li>
 </ul>
-<a name="setTradeables(java.util.HashMap)">
+<a name="setTradables(java.util.HashMap)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setTradeables</h4>
-<pre>public&nbsp;void&nbsp;setTradeables(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradeable.html" title="interface in de.stock.tradeable">ITradeable</a>,java.lang.Long&gt;&nbsp;tradeables)</pre>
+<h4>setTradables</h4>
+<pre>public&nbsp;void&nbsp;setTradables(java.util.HashMap&lt;<a href="../../../de/stock/tradeable/ITradable.html" title="interface in de.stock.tradeable">ITradable</a>,java.lang.Long&gt;&nbsp;tradeables)</pre>
 </li>
 </ul>
 </li>

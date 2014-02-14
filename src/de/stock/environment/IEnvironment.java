@@ -34,9 +34,9 @@ public interface IEnvironment {
 
     /**
      * Adds all directly available and linked by other enviroments affected
-     * tradeables recursively
+     * tradables recursively
      * 
-     * @return Returns all affected tradeables of current environment
+     * @return Returns all affected tradables of current environment
      */
     public HashSet<ITradable> getInfluencedTradables();
 

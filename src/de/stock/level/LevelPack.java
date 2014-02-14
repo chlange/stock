@@ -38,7 +38,7 @@ public abstract class LevelPack implements ILevelPack {
     private boolean               hasOption;
 
     /**
-     * Tradeables in this level pack (each level may have specific tradables,
+     * Tradables in this level pack (each level may have specific tradables,
      * too)
      */
     private ArrayList<ITradable> tradables;

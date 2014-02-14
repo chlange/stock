@@ -20,7 +20,7 @@ public final class Settings_Influencable {
      */
     public static final Integer PLAYER_MONEY             = 0x0001;
     /**
-     * Influence players number of bought tradeables with this variable
+     * Influence players number of bought tradables with this variable
      */
     public static final Integer PLAYER_BOUGHT_TRADEABLES = 0x0002;
 
@@ -35,7 +35,7 @@ public final class Settings_Influencable {
             if (entry.getKey() == PLAYER_MONEY) {
                 Player.getInstance().incMoney(entry.getValue().longValue());
             } else if (entry.getKey() == PLAYER_BOUGHT_TRADEABLES) {
-                Player.getInstance().incBoughtTradeables(entry.getValue().longValue());
+                Player.getInstance().incBoughtTradables(entry.getValue().longValue());
             }
         }
     }

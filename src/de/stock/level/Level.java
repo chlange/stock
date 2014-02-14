@@ -24,7 +24,7 @@ public class Level extends Action implements ILevel {
      */
     private ILevelPack            levelPack;
     /**
-     * Tradeables in this level besides the ones of the
+     * Tradables in this level besides the ones of the
      * {@link de.stock.level.LevelPack level pack}
      */
     private ArrayList<ITradable> tradables;
