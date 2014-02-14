@@ -16,8 +16,8 @@ import de.stock.settings.Settings_Game;
 import de.stock.settings.Settings_Level;
 import de.stock.settings.Settings_Output;
 import de.stock.settings.Settings_Player;
-import de.stock.tradeable.ITradeable;
-import de.stock.tradeable.TradeableHandler;
+import de.stock.tradable.ITradable;
+import de.stock.tradable.TradableHandler;
 import de.stock.utils.InputReader;
 import de.stock.utils.Printer;
 
@@ -43,7 +43,7 @@ public class Game {
     public static void loadContent() {
         nrEvents = ActionObserver.getInstance().loadEvents();
         nrEnvironments = EnvironmentHandler.getInstance().loadEnvironments();
-        nrTradeables = TradeableHandler.getInstance().loadTradeables();
+        nrTradeables = TradableHandler.getInstance().loadTradeables();
 
         // Load events from resource path
         // Network loading possible
@@ -69,9 +69,9 @@ public class Game {
         for (final MainEvent event : ActionObserver.getInstance().getMainEvents()) {
             event.initializeIndex();
         }
-        for (final ITradeable tradeable : TradeableHandler.getInstance().getTradeables()) {
-            tradeable.initializeShares();
-            tradeable.initializeValue();
+        for (final ITradable tradable : TradableHandler.getInstance().getTradables()) {
+            tradable.initializeShares();
+            tradable.initializeValue();
         }
 
         Printer.println(Settings_Output.OUT_MSG, 0, "Please choose a difficulty", "Please choose a difficulty");
@@ -102,7 +102,7 @@ public class Game {
             }
         }
 
-        Player.getInstance().setCurrency("€");
+        Player.getInstance().setCurrency("â‚¬");
 
         // Round loop
         for (;; Settings_Game.ROUND++) {
@@ -114,11 +114,11 @@ public class Game {
             System.out.println("ROUND:");
             System.out.println("\t" + Settings_Game.ROUND);
 
-            TradeableHandler.getInstance().saveCurrentState();
+            TradableHandler.getInstance().saveCurrentState();
             ActionObserver.getInstance().iterateActiveEvents();
             ActionObserver.getInstance().iterateMainEvents();
             ActionObserver.getInstance().iterateActiveLevels();
-            TradeableHandler.getInstance().updateUnchangedTradeables();
+            TradableHandler.getInstance().updateUnchangedTradables();
 
             showInfo();
 
@@ -137,10 +137,10 @@ public class Game {
                     bla = nextRoundLine.substring(1, nextRoundLine.length());
                     index = Integer.parseInt(bla.split("\\.")[0]);
                     amount = Integer.parseInt(bla.split("\\.")[1]);
-                    Entry<ITradeable, Double> entry = null;
+                    Entry<ITradable, Double> entry = null;
 
-                    final java.util.Iterator<Entry<ITradeable, Double>> it = TradeableHandler
-                            .getInstance().getActiveTradeables().entrySet().iterator();
+                    final java.util.Iterator<Entry<ITradable, Double>> it = TradableHandler
+                            .getInstance().getActiveTradables().entrySet().iterator();
                     for (int i = 0; i < index; i++) {
                         entry = it.next();
                     }
@@ -152,7 +152,7 @@ public class Game {
                         if (entry.getKey().getShares() - amount >= 0) {
                             Player.getInstance().decMoney(entry.getValue() * amount);
                             Player.getInstance().incBoughtTradeables(amount);
-                            Player.getInstance().addTradeable(entry.getKey(), amount.longValue());
+                            Player.getInstance().addTradable(entry.getKey(), amount.longValue());
                             entry.getKey().decShares(amount);
                         } else {
                             Printer.println(Settings_Output.OUT_ERROR, 0, "Insufficient shares",
@@ -164,17 +164,17 @@ public class Game {
                     bla = nextRoundLine.substring(1, nextRoundLine.length());
                     index = Integer.parseInt(bla.split("\\.")[0]);
                     amount = Integer.parseInt(bla.split("\\.")[1]);
-                    Entry<ITradeable, Double> entry = null;
+                    Entry<ITradable, Double> entry = null;
 
-                    final java.util.Iterator<Entry<ITradeable, Double>> it = TradeableHandler
-                            .getInstance().getActiveTradeables().entrySet().iterator();
+                    final java.util.Iterator<Entry<ITradable, Double>> it = TradableHandler
+                            .getInstance().getActiveTradables().entrySet().iterator();
                     for (int i = 0; i < index; i++) {
                         entry = it.next();
                     }
 
                     Player.getInstance().incMoney(entry.getValue() * amount);
                     Player.getInstance().decBoughtTradeables(amount);
-                    Player.getInstance().getTradeables().remove(entry.getKey());
+                    Player.getInstance().getTradables().remove(entry.getKey());
                     entry.getKey().incShares(amount);
                 }
 
@@ -190,19 +190,19 @@ public class Game {
                 + Player.getInstance().getCurrency());
 
         System.out.println("YOUR TRADEABLES: ");
-        for (final Entry<ITradeable, Long> entry : Player.getInstance().getTradeables().entrySet()) {
+        for (final Entry<ITradable, Long> entry : Player.getInstance().getTradables().entrySet()) {
             Printer.print("\t");
             Printer.println(Settings_Output.OUT_TRADEABLE, entry.getValue(), entry.getKey()
                     .getName(), entry.getKey().getDescription());
         }
 
-        // Print tradeable infos
+        // Print tradable infos
         System.out.println("TRADEABLES: ");
-        for (final Entry<ITradeable, Double> tradeable : TradeableHandler.getInstance()
-                .getActiveTradeables().entrySet()) {
+        for (final Entry<ITradable, Double> tradable : TradableHandler.getInstance()
+                .getActiveTradables().entrySet()) {
             Printer.print("\t");
-            Printer.println(Settings_Output.OUT_TRADEABLE, tradeable.getValue(), tradeable.getKey()
-                    .getName(), "Available shares " + tradeable.getKey().getShares());
+            Printer.println(Settings_Output.OUT_TRADEABLE, tradable.getValue(), tradable.getKey()
+                    .getName(), "Available shares " + tradable.getKey().getShares());
         }
 
         Integer levelCount = 1;
@@ -235,8 +235,8 @@ public class Game {
         System.out.println();
         System.out.println("\tNext round with input of \"x\"");
         System.out
-                .println("\tBuy with \"b*.x\" - * is the index of the tradeable, x is the amount");
+                .println("\tBuy with \"b*.x\" - * is the index of the tradable (starts at 1!), x is the amount");
         System.out
-                .println("\tSell with \"s*.x\" - * is the index of the tradeable, x is the amount");
+                .println("\tSell with \"s*.x\" - * is the index of the tradable (starts at 1!), x is the amount");
     }
 }

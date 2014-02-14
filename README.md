@@ -1,7 +1,7 @@
 stock
 =====
 
-A game facing the tough and obscure world of stock exchange. Levels, Events, Environments, Tradeables, you will love it! More information will be published soon, keep your eyes peeled.
+A game facing the tough and obscure world of stock exchange. Levels, Events, Environments, Tradables, you will love it!
 
 What's done?
 ============
@@ -11,6 +11,7 @@ What's done?
 	- (Documented) Interface for level contributors. 
 		The community should develop levels for the game.
 	- Unit tests are complete.
+	- Small sample CLI game ready.
 					
 What's missing?
 ===============
